@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>AutomationExecute</groupId>
+	<artifactId>Execute</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>Execute</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.cinchcast.ams.automation</groupId>
+			<artifactId>amsAutomationScripts</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.cinchcast.btr.automation</groupId>
+			<artifactId>btrAutomationScripts</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.cinchcast</groupId>
+			<artifactId>automationFramework</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.webdriver.qa.automation.execute.Execute</mainClass>
+					<arguments>
+						<argumenet>${testName}</argumenet>
+					</arguments>
+					<systemProperties>
+						<systemProperty>
+							<key>configFile</key>
+							<value>/opt/work/Execute/src/main/java/com/webdriver/qa/automation/execute/configs/config_forkosh.json</value>
+						</systemProperty>
+						<systemProperty>
+							<key>webdriver.chrome.driver</key>
+							<value>/Users/danielforkosh/Downloads/chromedriver</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

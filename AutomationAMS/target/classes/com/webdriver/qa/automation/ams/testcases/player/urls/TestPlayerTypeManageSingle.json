@@ -1,0 +1,11 @@
+{
+	"testConfig": {
+		"attributes": {
+			"username": "selAuto1@cinchcast.com",
+			"password": "p@ssw0rd",
+			"previewUrlType" : "eesp",
+			"permalinkUrlType" : "ses",
+			"embedUrlType" : "eesp"
+		}
+	}
+}

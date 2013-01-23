@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="12" failed="0" total="12" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="127" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="127" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+      <class name="frameworktests.TestFramework">
+        <test-method status="FAIL" signature="setup()[pri:0, instance:frameworktests.TestFramework@510dc6b5]" name="setup" is-config="true" duration-ms="0" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at com.webdriver.qa.automation.framework.Framework.loadFramework(Framework.java:67)
+	at frameworktests.TestFramework.setup(TestFramework.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:551)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:175)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:107)
+	at org.testng.TestRunner.privateRun(TestRunner.java:758)
+	at org.testng.TestRunner.run(TestRunner.java:613)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1170)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1095)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:60)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:106)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+        </test-method> <!-- setup -->
+        <test-method status="SKIP" signature="testDBConnection()[pri:0, instance:frameworktests.TestFramework@510dc6b5]" name="testDBConnection" duration-ms="1" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+        </test-method> <!-- testDBConnection -->
+        <test-method status="SKIP" signature="testGetAMSJsonFiles()[pri:0, instance:frameworktests.TestFramework@510dc6b5]" name="testGetAMSJsonFiles" duration-ms="0" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+        </test-method> <!-- testGetAMSJsonFiles -->
+        <test-method status="SKIP" signature="testGetBTRJsonFiles()[pri:0, instance:frameworktests.TestFramework@510dc6b5]" name="testGetBTRJsonFiles" duration-ms="0" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+        </test-method> <!-- testGetBTRJsonFiles -->
+        <test-method status="SKIP" signature="testGetSuccessfulAttributeValue()[pri:0, instance:frameworktests.TestFramework@510dc6b5]" name="testGetSuccessfulAttributeValue" duration-ms="1" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+        </test-method> <!-- testGetSuccessfulAttributeValue -->
+        <test-method status="SKIP" signature="testGetInvalidAttributeValue()[pri:0, instance:frameworktests.TestFramework@510dc6b5]" name="testGetInvalidAttributeValue" duration-ms="0" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+        </test-method> <!-- testGetInvalidAttributeValue -->
+        <test-method status="SKIP" signature="testInvalidBrowserType()[pri:0, instance:frameworktests.TestFramework@510dc6b5]" name="testInvalidBrowserType" duration-ms="1" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+        </test-method> <!-- testInvalidBrowserType -->
+        <test-method status="SKIP" signature="testInvalidJsonEnvironment()[pri:0, instance:frameworktests.TestFramework@510dc6b5]" name="testInvalidJsonEnvironment" duration-ms="0" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+        </test-method> <!-- testInvalidJsonEnvironment -->
+        <test-method status="SKIP" signature="testNonExistingProject()[pri:0, instance:frameworktests.TestFramework@510dc6b5]" name="testNonExistingProject" duration-ms="0" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+        </test-method> <!-- testNonExistingProject -->
+        <test-method status="SKIP" signature="testProperJsonBrowserType()[pri:0, instance:frameworktests.TestFramework@510dc6b5]" name="testProperJsonBrowserType" duration-ms="0" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+        </test-method> <!-- testProperJsonBrowserType -->
+        <test-method status="SKIP" signature="testProperJsonEnvironment()[pri:0, instance:frameworktests.TestFramework@510dc6b5]" name="testProperJsonEnvironment" duration-ms="0" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+        </test-method> <!-- testProperJsonEnvironment -->
+        <test-method status="SKIP" signature="testProperJsonImplicitWaitTime()[pri:0, instance:frameworktests.TestFramework@510dc6b5]" name="testProperJsonImplicitWaitTime" duration-ms="0" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+        </test-method> <!-- testProperJsonImplicitWaitTime -->
+        <test-method status="SKIP" signature="testProperJsonProjectType()[pri:0, instance:frameworktests.TestFramework@510dc6b5]" name="testProperJsonProjectType" duration-ms="0" started-at="2012-07-17T17:16:25Z" finished-at="2012-07-17T17:16:25Z">
+        </test-method> <!-- testProperJsonProjectType -->
+      </class> <!-- frameworktests.TestFramework -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>

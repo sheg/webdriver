@@ -1,0 +1,421 @@
+/**
+ * TODO
+ *
+ */
+package com.webdriver.qa.automation.ams.pages.edit;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import com.webdriver.qa.automation.ams.enums.ContentCategory;
+import com.webdriver.qa.automation.ams.enums.PlaylistType;
+import com.webdriver.qa.automation.ams.pages.manage.PlaylistContentPage;
+import com.webdriver.qa.automation.framework.page.BasePage;
+
+/**
+ * @author bhutton(brianhutton@cinchcast.com)
+ * Created on: 04/06/2012
+ *
+ */
+public class EditPlaylistPage extends BasePage
+{
+
+  /**
+   * Title #WebElement
+   */
+  @FindBy(css = ".box-header")
+  private WebElement playlist_header;
+  /**
+   * Create Dynamic Playlist #RadioButton
+   */
+  @FindBy(xpath = "//label[2]")
+  private WebElement create_dynamic_playlist;
+
+  /**
+   * Create Manual Playlist #RadioButton
+   */
+  @FindBy(xpath = "//label")
+  private WebElement create_manual_playlist;
+
+  /**
+   * Playlist Title #TextField
+   */
+  @FindBy(id = "Playlist_Name")
+  private WebElement title_textField;
+
+  /**
+   * Save Playlist #SubmitButton
+   */
+  @FindBy(id = "aSavePlaylist")
+  private WebElement save_playlist;
+
+  /**
+   * Search Config #Button
+   */
+  @FindBy(css = "button-search-config")
+  private WebElement search_config_button;
+
+  /**
+   * Search Config #Option: Everything
+   */
+  @FindBy(id = "cb-search-everything")
+  private WebElement search_option_everything;
+
+  /**
+   * Search Config #Option: Title
+   */
+  @FindBy(id = "cb-search-title")
+  private WebElement search_option_title;
+
+  /**
+   * Search Config #Option: Description
+   */
+  @FindBy(id = "cb-search-description")
+  private WebElement search_option_description;
+
+  /**
+   * Search Config #Option: Tags
+   */
+  @FindBy(id = "cb-search-tags")
+  private WebElement search_option_tags;
+
+  /**
+   * Search Config #Option: Category
+   */
+  @FindBy(id = "cb-search-category")
+  private WebElement search_option_category;
+
+  /**
+   * Search Playlist Content #TextField
+   */
+  @FindBy(id = "search-term-textbox")
+  private WebElement search_textField;
+
+  /**
+   * Search Submit #Button
+   */
+  @FindBy(css = "btn submit")
+  private WebElement search_submit;
+
+  /**
+   * Done Adding Content To Manual Playlist #Button
+   */
+  @FindBy(id = "close-content")
+  private WebElement done;
+
+  /**
+   * Add All Content to Dynamic Playlist #CheckBox
+   */
+  @FindBy(id = "chkAllItems")
+  private WebElement dynamic_all_items;
+
+  /**
+   * Include Hidden Content In Dynamic Playlist #RadioButton
+   */
+  @FindBy(xpath = "//div[3]/div/label[2]")
+  private WebElement include_hidden;
+
+  /**
+   * Exclude Hidden Content InDynamic Playlist #RadioButton
+   */
+  @FindBy(xpath = "//div[3]/div/label")
+  private WebElement exclude_hidden;
+
+  /**
+   * Increase Dynamic Playlist Size by 1 #Button
+   */
+  @FindBy(css = "a.btn.step-up")
+  private WebElement dynamic_increase_size;
+
+  /**
+   * Decrease Dynamic Playlist Size by 1 #Button
+   */
+  @FindBy(css = "a.btn.step-down")
+  private WebElement dynamic_decrease_size;
+
+  /**
+   * Shows current PDynamic Playlist Count #TextField
+   */
+  @FindBy(id = "playlist-count")
+  private WebElement playlist_count;
+  /**
+   * Long Description Rich Text Area #iFrame
+   */
+  @FindBy(id = "Playlist_LongDescription_ifr")
+  private WebElement longDescription_frame;
+
+  /**
+   * Playlist Category DropDown #Selector
+   */
+  @FindBy(id = "Playlist_Category_CategoryID")
+  private WebElement category_selector;
+
+  /**
+   * Playlist Tags #TextField
+   */
+  @FindBy(id = "text-tags")
+  private WebElement tags_textField;
+
+  /**
+   * Custom Short Description #RadioButton
+   */
+  @FindBy(xpath = "//form[@id='PlaylistForm']/div[5]/fieldset[3]/div/label[2]")
+  private WebElement shortDescription_custom;
+
+  /**
+   * Copy Short Description From Long Description #RadioButton
+   */
+  @FindBy(xpath = "//fieldset[3]/div/label")
+  private WebElement shortDescription_copyFromLongDesc;
+
+  /**
+   * Playlist Short Description #TextArea
+   */
+  @FindBy(id = "Playlist_ShortDescription")
+  private WebElement shortDescription_textField;
+
+  /**
+   * Cancel Creation Of Playlist #Button
+   */
+  @FindBy(linkText = "cancel")
+  private WebElement cancel;
+
+  /**
+   * Delete Playlist #Button
+   */
+  @FindBy(linkText = "Delete")
+  private WebElement delete;
+
+  /**
+   * Publish Playlist #Button
+   */
+  @FindBy(linkText = "Publish")
+  private WebElement publish;
+
+  /**
+   * RSS Feed #Button
+   */
+  @FindBy(linkText = "RSS")
+  private WebElement feed_rss;
+
+  /**
+   * iTunes Feed #Button
+   */
+  @FindBy(linkText = "iTunes")
+  private WebElement feed_iTunes;
+
+  /**
+   * Embedded Code #TextField
+   */
+  @FindBy(id = "EmbededCode")
+  private WebElement player_embeddedCode_TextField;
+
+  /**
+   * Permalink URL #Link
+   */
+  @FindBy(css = "a.permalink")
+  private WebElement permalink_url;
+
+  /**
+   * Copy Embedded Code #Button
+   */
+  @FindBy(id = "aEmbedCopy")
+  private WebElement player_embededCode_copy;
+
+  /**
+   * Media Player #FlashObject
+   */
+  @FindBy(id = "mediaplayer")
+  private WebElement player;
+
+  /**
+   * Close Confirmation Message After Create #Button
+   */
+  @FindBy(xpath = "//body/div[5]/a")
+  private WebElement confirmation_message_close;
+
+  /**
+   * Confirmation Message After Create #TextArea
+   */
+  @FindBy(xpath = "//div[5]/p")
+  private WebElement confirmation_meesage_textField;
+
+  /**
+   * Parent's constructor
+   * 
+   * @param driver WebDriver's driver to use as browser
+   */
+  public EditPlaylistPage(WebDriver driver)
+  {
+    super(driver);
+  }
+
+  /**
+   * Deletes Playlist Currently In Edit Page<br>
+   *
+   * @param title Playlist's title user want to delete
+   * @throws Exception when current playlist being edited does not match
+   * the title of playlist the user wants to delete
+   *
+   * @return redirects to ArchiveContentPage
+   */
+  public PlaylistContentPage deletePlaylist(String title) throws Exception 
+  {
+    if (!title_textField.getAttribute("value").equals(title)) {
+      throw new Exception ("Trying to delete [" + title +"], but currently editing [" + title_textField + "]");
+    }
+    delete.click();
+
+    // Confirm deletion of playlist
+    Alert alert = getDriver().switchTo().alert();
+    alert.accept();
+
+    // Confirm leaving the page
+    alert = getDriver().switchTo().alert();
+    alert.accept();
+
+    return PageFactory.initElements(getDriver(), PlaylistContentPage.class);
+  }
+
+  public PlaylistContentPage saveChanges() {
+    
+    return PageFactory.initElements(getDriver(), PlaylistContentPage.class);
+  }
+
+  /**
+   * Validates if user is on Edit Playlist Page
+   *
+   * @return Boolean:
+   * <ul>
+   *  <li><code>true</code> if Page header is "Edit Playlist"
+   *  <li><code>false</code> otherwise
+   * </ul>
+   * @throws Exception When not in Edit Playlist Page
+   */
+  public boolean validateOnEditPlaylistPage() throws Exception
+  {
+    if (!playlist_header.getText().contains("Edit Playlist"))
+    {
+      throw new Exception("Could not validate being on the edit playlist page." +
+          " Header reads [" + playlist_header.getText() + "]");
+    }
+    return true;
+  }
+
+  /**
+   * Confirms creation of playlist.<br>
+   * Checks confirmation text and closes confirmation message. 
+   *
+   * @return {@link EditPlaylistPage}
+   */
+  public EditPlaylistPage confirmCreationOfPlaylist() throws Exception
+  {
+    if (!confirmation_meesage_textField.getText().equals("Your playlist has been created.")) {
+      throw new Exception("Couldn't confirm playlist creation message." +
+          " Expected [Your playlist has been created.]" +
+          ", but got [" + confirmation_meesage_textField.getText() + "].");
+    }
+
+    confirmation_message_close.click();
+    return this;
+  }
+
+  /**
+   * Validates the created playlist has the expected values presented in the parameters:
+   *
+   * @param type {@link PlaylistType#DYNAMIC} or {@link PlaylistType#MANUAL}
+   * @param size If {@link PlaylistType#MANUAL} then 0, if {@link PlaylistType#DYNAMIC}
+   * corroborates the size of the playlist
+   * @param includeHidden if <code>true</code>, then show hidden content, or if <code>false</code>
+   * hide hidden content
+   * @param title {@link String}, the title of the created playlist
+   * @param description {@link String}, the description of the created playlist
+   * @param category Checks {@link ContentCategory} is expected
+   * @param shortDescription if it's not copied from Description, check custom
+   */
+  public void validateValues(PlaylistType type, int size, boolean includeHidden, String title,
+      String description, ContentCategory category, String shortDescription)  throws Exception {
+
+    // Validate playlist content type
+    switch (type) {
+    case MANUAL:
+      if (!create_manual_playlist.getAttribute("class").equals("checked")) {
+        throw new Exception("Expected a [MANUAL] playlist, but radio button is not checked.");
+      }
+      break;
+    case DYNAMIC:
+      if (!create_dynamic_playlist.getAttribute("class").equals("checked")) {
+        throw new Exception("Expected a [DYNAMIC] playlist, but radio button is not checked.");
+      }
+      break;
+    }
+
+    // Validate playlist size
+    String actual_playlist_count = playlist_count.getAttribute("value");
+    if(!actual_playlist_count.equals(String.valueOf(size))) {
+      throw new Exception("Playlist count expected to be [" + size + "] but is ["
+          + actual_playlist_count + "].");
+    }
+
+    // Validate include hidden
+    if(includeHidden) {
+      if(!include_hidden.getAttribute("class").equals("checked")) {
+        throw new Exception("Expected playlist to include hidden, but radio button is not checked");
+      }
+    } else {
+      if(!exclude_hidden.getAttribute("class").equals("checked")) {
+        throw new Exception("Expected playlist to exclude hidden, but radio button is not checked");
+      }
+    }
+
+    // Validate Title
+    String actual_title = title_textField.getAttribute("value");
+    if(!actual_title.equals(title)) {
+      throw new Exception("Title miss matched. Expected [" + title + "], but got [" + actual_title);
+    }
+
+    // Validate description
+    try {
+      // Use the browser's driver to access the iFrame of tinyMCE
+      getDriver().switchTo().frame(longDescription_frame);
+      // Retrieve the body innerHTML text and compare to description. (This does
+      // not include rich text format)
+      String actual_description = getDriver().findElement(By.tagName("body")).getText();
+      if (!actual_description.equals(description)) {
+        throw new Exception("Description miss matched. Expected [" + description + "], but got ["
+            + actual_description + "].");
+      }
+    } finally {
+      // Switch focus back to main frame to continue with test.
+      getDriver().switchTo().defaultContent();
+    }
+
+    // Verify Category
+    final Select select = new Select(category_selector);
+    String selected_option = select.getFirstSelectedOption().getAttribute("value");
+    if(!selected_option.equals(category.getValue())) {
+      throw new Exception("Category does not match. Exected [" + category.getValue() + "]," +
+          " but got [" + category.getValue() + "].");
+    }
+
+    // Validate shortDescription
+    String actual_shortDescription = shortDescription_textField.getAttribute("value");
+    if(shortDescription.isEmpty()) {
+      if (!actual_shortDescription.equals(description)) {
+        throw new Exception("Short Description set to copy from Description. " +
+            "Expected [" + description + "], but got [" + actual_shortDescription + "]");
+      }
+    } else {
+      if(!actual_shortDescription.equals(shortDescription)) {
+        throw new Exception("Short Description set to Custom. " +
+            "Expected [" + shortDescription + "], but got [" + actual_shortDescription + "].");
+      }
+    }
+  }
+}

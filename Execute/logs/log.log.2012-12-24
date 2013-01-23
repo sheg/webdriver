@@ -1,0 +1,485 @@
+2012-12-24 11:25:17,512 INFO Closing WebDriver 
+2012-12-24 11:25:17,731 INFO ********************* 
+2012-12-24 11:25:17,731 INFO  
+2012-12-24 11:25:17,731 INFO PASSED TESTS 
+2012-12-24 11:25:17,731 INFO NO TESTS PASSED 
+2012-12-24 11:25:17,731 INFO =============================================== 
+2012-12-24 11:25:17,731 INFO FAILED TESTS 
+2012-12-24 11:25:17,731 INFO NO TESTS FAILED 
+2012-12-24 11:26:14,589 INFO ********************* 
+2012-12-24 11:26:14,590 INFO Starting test case: TestAMSSuccessfulLogin 
+2012-12-24 11:26:14,590 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:26:24,058 INFO I/O exception (java.net.SocketException) caught when processing request: Connection reset 
+2012-12-24 11:26:24,059 INFO Retrying request 
+2012-12-24 11:27:23,826 ERROR Test failed - testAMSSuccessfulLogin 
+2012-12-24 11:27:23,826 INFO Saving Screenshot 
+2012-12-24 11:27:23,832 ERROR Could not take screenshot 
+org.openqa.selenium.WebDriverException: Chrome did not respond to 'WaitForAllTabsToStopLoading'. Elapsed time was 0 ms. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3 milliseconds
+Build info: version: '2.25.0', revision: '17482', time: '2012-07-18 22:18:01'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.8.2', java.version: '1.6.0_37'
+Driver info: driver.version: ChromeDriver
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:188)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:498)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:502)
+	at org.openqa.selenium.chrome.ChromeDriver.getScreenshotAs(ChromeDriver.java:177)
+	at com.webdriver.qa.automation.execute.runner.CustomTestListener.saveScreenShot(CustomTestListener.java:33)
+	at com.webdriver.qa.automation.execute.runner.CustomTestListener.onTestFailure(CustomTestListener.java:48)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1884)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1868)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:774)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:893)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1218)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:758)
+	at org.testng.TestRunner.run(TestRunner.java:613)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1170)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1095)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.webdriver.qa.automation.execute.runner.SuiteRunner.executeTestNGSuite(SuiteRunner.java:18)
+	at com.webdriver.qa.automation.execute.Execute.main(Execute.java:8)
+2012-12-24 11:27:23,841 INFO Closing WebDriver 
+2012-12-24 11:28:03,392 INFO ********************* 
+2012-12-24 11:28:03,393 INFO Starting test case: TestAMSSuccessfulLogin 
+2012-12-24 11:28:03,393 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:28:09,161 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:28:09,161 INFO Retrying request 
+2012-12-24 11:28:29,988 ERROR Test failed - testAMSSuccessfulLogin 
+2012-12-24 11:28:29,988 INFO Saving Screenshot 
+2012-12-24 11:28:29,995 ERROR Could not take screenshot 
+org.openqa.selenium.WebDriverException: Chrome did not respond to 'WaitForAllTabsToStopLoading'. Elapsed time was 0 ms. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3 milliseconds
+Build info: version: '2.25.0', revision: '17482', time: '2012-07-18 22:18:01'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.8.2', java.version: '1.6.0_37'
+Driver info: driver.version: ChromeDriver
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:188)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:498)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:502)
+	at org.openqa.selenium.chrome.ChromeDriver.getScreenshotAs(ChromeDriver.java:177)
+	at com.webdriver.qa.automation.execute.runner.CustomTestListener.saveScreenShot(CustomTestListener.java:33)
+	at com.webdriver.qa.automation.execute.runner.CustomTestListener.onTestFailure(CustomTestListener.java:48)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1884)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1868)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:774)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:893)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1218)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:758)
+	at org.testng.TestRunner.run(TestRunner.java:613)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1170)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1095)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.webdriver.qa.automation.execute.runner.SuiteRunner.executeTestNGSuite(SuiteRunner.java:18)
+	at com.webdriver.qa.automation.execute.Execute.main(Execute.java:8)
+2012-12-24 11:28:30,004 INFO Closing WebDriver 
+2012-12-24 11:28:30,664 INFO WebDriver closed 
+2012-12-24 11:28:30,666 INFO ********************* 
+2012-12-24 11:28:30,666 INFO Starting test case: TestAMSBlankCredentialsLogin 
+2012-12-24 11:28:30,666 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:30:44,263 INFO ********************* 
+2012-12-24 11:30:44,264 INFO Starting test case: TestAMSSuccessfulLogin 
+2012-12-24 11:30:44,264 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:30:46,369 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:30:46,369 INFO Retrying request 
+2012-12-24 11:31:22,624 ERROR Test failed - testAMSSuccessfulLogin 
+2012-12-24 11:31:22,624 INFO Saving Screenshot 
+2012-12-24 11:31:22,997 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/11.31.22.png 
+2012-12-24 11:31:23,000 INFO Closing WebDriver 
+2012-12-24 11:31:23,956 INFO WebDriver closed 
+2012-12-24 11:31:23,958 INFO ********************* 
+2012-12-24 11:31:23,958 INFO Starting test case: TestAMSBlankCredentialsLogin 
+2012-12-24 11:31:23,958 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:31:25,609 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:31:25,609 INFO Retrying request 
+2012-12-24 11:33:31,168 ERROR Test failed - testBlankCredentialsLogin 
+2012-12-24 11:33:31,169 INFO Saving Screenshot 
+2012-12-24 11:33:31,422 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/11.33.31.png 
+2012-12-24 11:33:31,424 INFO Closing WebDriver 
+2012-12-24 11:33:32,280 INFO WebDriver closed 
+2012-12-24 11:33:32,281 INFO ********************* 
+2012-12-24 11:33:32,281 INFO Starting test case: TestAMSBlankPasswordLogin 
+2012-12-24 11:33:32,281 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:33:33,802 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:33:33,802 INFO Retrying request 
+2012-12-24 11:33:59,104 ERROR Test failed - testPasswordBlankLogin 
+2012-12-24 11:33:59,104 INFO Saving Screenshot 
+2012-12-24 11:33:59,110 ERROR Could not take screenshot 
+org.openqa.selenium.WebDriverException: Chrome did not respond to 'WaitForAllTabsToStopLoading'. Elapsed time was 0 ms. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 4 milliseconds
+Build info: version: '2.28.0', revision: '18309', time: '2012-12-11 15:53:30'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.8.2', java.version: '1.6.0_37'
+Session ID: 7cd79b90668e5b8e791158fa88bed5b3
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{platform=MAC, chrome.chromedriverVersion=21.0.1180.4, acceptSslCerts=false, javascriptEnabled=true, browserName=chrome, rotatable=false, locationContextEnabled=false, version=23.0.1271.101, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, nativeEvents=true, webStorageEnabled=true, chrome.nativeEvents=false, applicationCacheEnabled=false, takesScreenshot=true}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:187)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:533)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.chrome.ChromeDriver.getScreenshotAs(ChromeDriver.java:173)
+	at com.webdriver.qa.automation.execute.runner.CustomTestListener.saveScreenShot(CustomTestListener.java:33)
+	at com.webdriver.qa.automation.execute.runner.CustomTestListener.onTestFailure(CustomTestListener.java:48)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1884)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1868)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:774)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:893)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1218)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:758)
+	at org.testng.TestRunner.run(TestRunner.java:613)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1170)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1095)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.webdriver.qa.automation.execute.runner.SuiteRunner.executeTestNGSuite(SuiteRunner.java:18)
+	at com.webdriver.qa.automation.execute.Execute.main(Execute.java:8)
+2012-12-24 11:33:59,117 INFO Closing WebDriver 
+2012-12-24 11:33:59,935 INFO WebDriver closed 
+2012-12-24 11:33:59,936 INFO ********************* 
+2012-12-24 11:33:59,936 INFO Starting test case: TestAMSBlankUsernameLogin 
+2012-12-24 11:33:59,936 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:34:13,444 INFO ********************* 
+2012-12-24 11:34:13,444 INFO Starting test case: TestAMSSuccessfulLogin 
+2012-12-24 11:34:13,445 INFO Initializing WebDriver - FIREFOX 
+2012-12-24 11:36:20,938 INFO ********************* 
+2012-12-24 11:36:20,938 INFO Starting test case: TestAMSSuccessfulLogin 
+2012-12-24 11:36:20,938 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:36:23,253 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:36:23,253 INFO Retrying request 
+2012-12-24 11:36:47,742 ERROR Test failed - testAMSSuccessfulLogin 
+2012-12-24 11:36:47,742 INFO Saving Screenshot 
+2012-12-24 11:36:48,103 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/11.36.47.png 
+2012-12-24 11:36:48,106 INFO Closing WebDriver 
+2012-12-24 11:36:48,982 INFO WebDriver closed 
+2012-12-24 11:36:48,984 INFO ********************* 
+2012-12-24 11:36:48,984 INFO Starting test case: TestAMSBlankCredentialsLogin 
+2012-12-24 11:36:48,984 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:36:50,977 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:36:50,977 INFO Retrying request 
+2012-12-24 11:37:16,127 ERROR Test failed - testBlankCredentialsLogin 
+2012-12-24 11:37:16,127 INFO Saving Screenshot 
+2012-12-24 11:37:16,389 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/11.37.16.png 
+2012-12-24 11:37:16,390 INFO Closing WebDriver 
+2012-12-24 11:37:17,171 INFO WebDriver closed 
+2012-12-24 11:37:17,171 INFO ********************* 
+2012-12-24 11:37:17,171 INFO Starting test case: TestAMSBlankPasswordLogin 
+2012-12-24 11:37:17,172 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:37:18,717 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:37:18,717 INFO Retrying request 
+2012-12-24 11:37:43,497 ERROR Test failed - testPasswordBlankLogin 
+2012-12-24 11:37:43,497 INFO Saving Screenshot 
+2012-12-24 11:37:43,697 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/11.37.43.png 
+2012-12-24 11:37:43,698 INFO Closing WebDriver 
+2012-12-24 11:37:44,652 INFO WebDriver closed 
+2012-12-24 11:37:44,653 INFO ********************* 
+2012-12-24 11:37:44,653 INFO Starting test case: TestAMSBlankUsernameLogin 
+2012-12-24 11:37:44,653 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:37:46,245 INFO I/O exception (java.net.SocketException) caught when processing request: Connection reset 
+2012-12-24 11:37:46,245 INFO Retrying request 
+2012-12-24 11:38:42,954 ERROR Test failed - tesUsernameBlankLogin 
+2012-12-24 11:38:42,954 INFO Saving Screenshot 
+2012-12-24 11:38:43,189 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/11.38.42.png 
+2012-12-24 11:38:43,190 INFO Closing WebDriver 
+2012-12-24 11:38:44,039 INFO WebDriver closed 
+2012-12-24 11:38:44,040 INFO ********************* 
+2012-12-24 11:38:44,040 INFO Starting test case: TestAMSInexistantUserLogin 
+2012-12-24 11:38:44,040 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:38:45,672 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:38:45,672 INFO Retrying request 
+2012-12-24 11:39:13,690 INFO Woo Hoo! The following test passed: testInexistantUsernameLogin 
+2012-12-24 11:39:13,691 INFO Closing WebDriver 
+2012-12-24 11:39:14,470 INFO WebDriver closed 
+2012-12-24 11:39:14,471 INFO ********************* 
+2012-12-24 11:39:14,471 INFO Starting test case: TestAMSWrongPasswordLogin 
+2012-12-24 11:39:14,471 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:39:15,941 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:39:15,941 INFO Retrying request 
+2012-12-24 11:39:38,812 INFO Woo Hoo! The following test passed: testWrongPasswordLogin 
+2012-12-24 11:39:38,813 INFO Closing WebDriver 
+2012-12-24 11:39:39,594 INFO WebDriver closed 
+2012-12-24 11:39:39,707 INFO ********************* 
+2012-12-24 11:39:39,707 INFO  
+2012-12-24 11:39:39,707 INFO PASSED TESTS 
+2012-12-24 11:39:39,708 INFO testInexistantUsernameLogin 
+2012-12-24 11:39:39,708 INFO testWrongPasswordLogin 
+2012-12-24 11:39:39,708 INFO =============================================== 
+2012-12-24 11:39:39,708 INFO FAILED TESTS 
+2012-12-24 11:39:39,708 INFO testPasswordBlankLogin 
+2012-12-24 11:39:39,708 INFO testBlankCredentialsLogin 
+2012-12-24 11:39:39,708 INFO tesUsernameBlankLogin 
+2012-12-24 11:39:39,708 INFO testAMSSuccessfulLogin 
+2012-12-24 11:40:23,015 INFO ********************* 
+2012-12-24 11:40:23,016 INFO Starting test case: TestAMSSuccessfulLogin 
+2012-12-24 11:40:23,016 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:40:25,183 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:40:25,183 INFO Retrying request 
+2012-12-24 11:41:14,109 ERROR Test failed - testAMSSuccessfulLogin 
+2012-12-24 11:41:14,109 INFO Saving Screenshot 
+2012-12-24 11:41:14,387 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/11.41.14.png 
+2012-12-24 11:41:14,389 INFO Closing WebDriver 
+2012-12-24 11:41:15,241 INFO WebDriver closed 
+2012-12-24 11:41:15,242 INFO ********************* 
+2012-12-24 11:41:15,242 INFO Starting test case: TestAMSBlankCredentialsLogin 
+2012-12-24 11:41:15,242 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:41:16,708 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:41:16,708 INFO Retrying request 
+2012-12-24 11:41:53,528 ERROR Test failed - testBlankCredentialsLogin 
+2012-12-24 11:41:53,528 INFO Saving Screenshot 
+2012-12-24 11:41:53,807 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/11.41.53.png 
+2012-12-24 11:41:53,809 INFO Closing WebDriver 
+2012-12-24 11:41:54,572 INFO WebDriver closed 
+2012-12-24 11:41:54,573 INFO ********************* 
+2012-12-24 11:41:54,573 INFO Starting test case: TestAMSBlankPasswordLogin 
+2012-12-24 11:41:54,573 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:41:56,023 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:41:56,023 INFO Retrying request 
+2012-12-24 11:42:29,085 ERROR Test failed - testPasswordBlankLogin 
+2012-12-24 11:42:29,085 INFO Saving Screenshot 
+2012-12-24 11:42:29,280 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/11.42.29.png 
+2012-12-24 11:42:29,282 INFO Closing WebDriver 
+2012-12-24 11:42:30,064 INFO WebDriver closed 
+2012-12-24 11:42:30,065 INFO ********************* 
+2012-12-24 11:42:30,065 INFO Starting test case: TestAMSBlankUsernameLogin 
+2012-12-24 11:42:30,065 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:42:31,548 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:42:31,548 INFO Retrying request 
+2012-12-24 11:42:48,549 ERROR Test failed - tesUsernameBlankLogin 
+2012-12-24 11:42:48,549 INFO Saving Screenshot 
+2012-12-24 11:42:48,787 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/11.42.48.png 
+2012-12-24 11:42:48,789 INFO Closing WebDriver 
+2012-12-24 11:42:49,571 INFO WebDriver closed 
+2012-12-24 11:42:49,572 INFO ********************* 
+2012-12-24 11:42:49,572 INFO Starting test case: TestAMSInexistantUserLogin 
+2012-12-24 11:42:49,572 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:42:51,149 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:42:51,149 INFO Retrying request 
+2012-12-24 11:43:29,109 INFO Woo Hoo! The following test passed: testInexistantUsernameLogin 
+2012-12-24 11:43:29,110 INFO Closing WebDriver 
+2012-12-24 11:43:29,999 INFO WebDriver closed 
+2012-12-24 11:43:30,000 INFO ********************* 
+2012-12-24 11:43:30,000 INFO Starting test case: TestAMSWrongPasswordLogin 
+2012-12-24 11:43:30,001 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 11:43:31,832 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 11:43:31,832 INFO Retrying request 
+2012-12-24 11:44:12,966 INFO Woo Hoo! The following test passed: testWrongPasswordLogin 
+2012-12-24 11:44:12,967 INFO Closing WebDriver 
+2012-12-24 11:44:13,818 INFO WebDriver closed 
+2012-12-24 11:44:13,888 INFO ********************* 
+2012-12-24 11:44:13,889 INFO  
+2012-12-24 11:44:13,889 INFO PASSED TESTS 
+2012-12-24 11:44:13,889 INFO testWrongPasswordLogin 
+2012-12-24 11:44:13,889 INFO testInexistantUsernameLogin 
+2012-12-24 11:44:13,889 INFO =============================================== 
+2012-12-24 11:44:13,889 INFO FAILED TESTS 
+2012-12-24 11:44:13,889 INFO testAMSSuccessfulLogin 
+2012-12-24 11:44:13,889 INFO testPasswordBlankLogin 
+2012-12-24 11:44:13,889 INFO tesUsernameBlankLogin 
+2012-12-24 11:44:13,889 INFO testBlankCredentialsLogin 
+2012-12-24 12:14:25,894 INFO ********************* 
+2012-12-24 12:14:25,894 INFO Starting test case: TestPlayerTypeManageSingle 
+2012-12-24 12:14:25,895 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 12:14:28,043 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 12:14:28,043 INFO Retrying request 
+2012-12-24 12:15:42,611 ERROR Test failed - testPlayerTypeSingleManage 
+2012-12-24 12:15:42,611 INFO Saving Screenshot 
+2012-12-24 12:15:42,906 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/12.15.42.png 
+2012-12-24 12:15:42,912 INFO Closing WebDriver 
+2012-12-24 12:15:43,766 INFO WebDriver closed 
+2012-12-24 12:15:43,768 INFO ********************* 
+2012-12-24 12:15:43,768 INFO Starting test case: TestPlayerTypeEditSingle 
+2012-12-24 12:15:43,768 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 12:15:45,232 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 12:15:45,232 INFO Retrying request 
+2012-12-24 12:17:35,211 ERROR Test failed - testPlayerTypeEditSingle 
+2012-12-24 12:17:35,211 INFO Saving Screenshot 
+2012-12-24 12:17:35,218 ERROR Could not take screenshot 
+org.openqa.selenium.WebDriverException: Chrome did not respond to 'WaitForAllTabsToStopLoading'. Elapsed time was 0 ms. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 4 milliseconds
+Build info: version: '2.28.0', revision: '18309', time: '2012-12-11 15:53:30'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.8.2', java.version: '1.6.0_37'
+Session ID: 0e82b25df54c95f7e4787e51e6b13ab6
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{platform=MAC, chrome.chromedriverVersion=21.0.1180.4, acceptSslCerts=false, javascriptEnabled=true, browserName=chrome, rotatable=false, locationContextEnabled=false, version=23.0.1271.101, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, nativeEvents=true, webStorageEnabled=true, chrome.nativeEvents=false, applicationCacheEnabled=false, takesScreenshot=true}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:187)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:533)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.chrome.ChromeDriver.getScreenshotAs(ChromeDriver.java:173)
+	at com.webdriver.qa.automation.execute.runner.CustomTestListener.saveScreenShot(CustomTestListener.java:33)
+	at com.webdriver.qa.automation.execute.runner.CustomTestListener.onTestFailure(CustomTestListener.java:48)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1884)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1868)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:774)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:893)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1218)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:758)
+	at org.testng.TestRunner.run(TestRunner.java:613)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1170)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1095)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.webdriver.qa.automation.execute.runner.SuiteRunner.executeTestNGSuite(SuiteRunner.java:18)
+	at com.webdriver.qa.automation.execute.Execute.main(Execute.java:8)
+2012-12-24 12:17:35,223 INFO Closing WebDriver 
+2012-12-24 12:17:40,489 INFO ********************* 
+2012-12-24 12:17:40,490 INFO Starting test case: TestPlayerTypeManageSingle 
+2012-12-24 12:17:40,490 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 12:17:42,522 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 12:17:42,522 INFO Retrying request 
+2012-12-24 12:18:05,376 ERROR Test failed - testPlayerTypeSingleManage 
+2012-12-24 12:18:05,376 INFO Saving Screenshot 
+2012-12-24 12:18:05,387 ERROR Could not take screenshot 
+org.openqa.selenium.WebDriverException: Chrome did not respond to 'WaitForAllTabsToStopLoading'. Elapsed time was 0 ms. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 7 milliseconds
+Build info: version: '2.28.0', revision: '18309', time: '2012-12-11 15:53:30'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.8.2', java.version: '1.6.0_37'
+Session ID: 639649b9c157d3fbd374e4e3b7cd71b3
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{platform=MAC, chrome.chromedriverVersion=21.0.1180.4, acceptSslCerts=false, javascriptEnabled=true, browserName=chrome, rotatable=false, locationContextEnabled=false, version=23.0.1271.101, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, nativeEvents=true, webStorageEnabled=true, chrome.nativeEvents=false, applicationCacheEnabled=false, takesScreenshot=true}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:187)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:533)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.chrome.ChromeDriver.getScreenshotAs(ChromeDriver.java:173)
+	at com.webdriver.qa.automation.execute.runner.CustomTestListener.saveScreenShot(CustomTestListener.java:33)
+	at com.webdriver.qa.automation.execute.runner.CustomTestListener.onTestFailure(CustomTestListener.java:48)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1884)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1868)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:774)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:893)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1218)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:758)
+	at org.testng.TestRunner.run(TestRunner.java:613)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1170)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1095)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.webdriver.qa.automation.execute.runner.SuiteRunner.executeTestNGSuite(SuiteRunner.java:18)
+	at com.webdriver.qa.automation.execute.Execute.main(Execute.java:8)
+2012-12-24 12:18:05,396 INFO Closing WebDriver 
+2012-12-24 12:18:06,078 INFO WebDriver closed 
+2012-12-24 12:18:06,079 INFO ********************* 
+2012-12-24 12:18:06,079 INFO Starting test case: TestPlayerTypeEditSingle 
+2012-12-24 12:18:06,080 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 12:18:07,541 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 12:18:07,541 INFO Retrying request 
+2012-12-24 12:19:06,807 INFO ********************* 
+2012-12-24 12:19:06,807 INFO Starting test case: TestInvalidLogin 
+2012-12-24 12:19:06,807 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 12:19:09,006 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 12:19:09,007 INFO Retrying request 
+2012-12-24 12:19:18,785 ERROR Test failed - testPlayerTypeEditSingle 
+2012-12-24 12:19:18,785 INFO Saving Screenshot 
+2012-12-24 12:19:19,081 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/12.19.18.png 
+2012-12-24 12:19:19,084 INFO Closing WebDriver 
+2012-12-24 12:19:19,935 INFO WebDriver closed 
+2012-12-24 12:19:19,981 INFO ********************* 
+2012-12-24 12:19:19,981 INFO  
+2012-12-24 12:19:19,982 INFO PASSED TESTS 
+2012-12-24 12:19:19,982 INFO NO TESTS PASSED 
+2012-12-24 12:19:19,982 INFO =============================================== 
+2012-12-24 12:19:19,982 INFO FAILED TESTS 
+2012-12-24 12:19:19,982 INFO testPlayerTypeEditSingle 
+2012-12-24 12:19:19,982 INFO testPlayerTypeSingleManage 
+2012-12-24 12:19:38,518 INFO Woo Hoo! The following test passed: testInvalidLogin 
+2012-12-24 12:19:38,519 INFO Closing WebDriver 
+2012-12-24 12:19:39,571 INFO WebDriver closed 
+2012-12-24 12:19:39,572 INFO ********************* 
+2012-12-24 12:19:39,572 INFO Starting test case: TestSuccessfulLogin 
+2012-12-24 12:19:39,572 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 12:19:41,003 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 12:19:41,003 INFO Retrying request 
+2012-12-24 12:20:12,126 INFO Woo Hoo! The following test passed: testSuccessfulLogin 
+2012-12-24 12:20:12,127 INFO Closing WebDriver 
+2012-12-24 12:20:12,987 INFO WebDriver closed 
+2012-12-24 12:20:13,046 INFO ********************* 
+2012-12-24 12:20:13,046 INFO  
+2012-12-24 12:20:13,047 INFO PASSED TESTS 
+2012-12-24 12:20:13,047 INFO testInvalidLogin 
+2012-12-24 12:20:13,047 INFO testSuccessfulLogin 
+2012-12-24 12:20:13,047 INFO =============================================== 
+2012-12-24 12:20:13,047 INFO FAILED TESTS 
+2012-12-24 12:20:13,047 INFO NO TESTS FAILED 
+2012-12-24 12:21:10,053 INFO ********************* 
+2012-12-24 12:21:10,054 INFO Starting test case: TestPlayerTypeManageSingle 
+2012-12-24 12:21:10,054 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 12:21:12,294 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 12:21:12,294 INFO Retrying request 
+2012-12-24 12:22:28,616 ERROR Test failed - testPlayerTypeSingleManage 
+2012-12-24 12:22:28,616 INFO Saving Screenshot 
+2012-12-24 12:22:28,998 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/12.22.28.png 
+2012-12-24 12:22:29,005 INFO Closing WebDriver 
+2012-12-24 12:22:30,190 INFO WebDriver closed 
+2012-12-24 12:22:30,192 INFO ********************* 
+2012-12-24 12:22:30,192 INFO Starting test case: TestPlayerTypeEditSingle 
+2012-12-24 12:22:30,192 INFO Initializing WebDriver - GOOGLECHROME 
+2012-12-24 12:22:31,717 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-12-24 12:22:31,717 INFO Retrying request 
+2012-12-24 12:24:34,774 ERROR Test failed - testPlayerTypeEditSingle 
+2012-12-24 12:24:34,775 INFO Saving Screenshot 
+2012-12-24 12:24:35,031 INFO Screnshot saved - /opt/work/screenshots/2012.12.24/12.24.34.png 
+2012-12-24 12:24:35,033 INFO Closing WebDriver 
+2012-12-24 12:24:35,885 INFO WebDriver closed 
+2012-12-24 12:24:35,943 INFO ********************* 
+2012-12-24 12:24:35,943 INFO  
+2012-12-24 12:24:35,943 INFO PASSED TESTS 
+2012-12-24 12:24:35,943 INFO NO TESTS PASSED 
+2012-12-24 12:24:35,943 INFO =============================================== 
+2012-12-24 12:24:35,943 INFO FAILED TESTS 
+2012-12-24 12:24:35,944 INFO testPlayerTypeSingleManage 
+2012-12-24 12:24:35,944 INFO testPlayerTypeEditSingle 

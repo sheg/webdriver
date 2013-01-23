@@ -1,0 +1,8 @@
+{
+	"testConfig": {
+		"attributes": {
+			"testAttribute1" : "test1",
+			"testAttribute2" : "test2"
+		}
+	}
+}

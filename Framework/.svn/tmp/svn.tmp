@@ -1,0 +1,47 @@
+package com.webdriver.qa.automation.framework.testcase;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+
+import com.webdriver.qa.automation.framework.Framework;
+import com.webdriver.qa.automation.framework.WebDriverManager;
+
+public abstract class TestCase {
+
+	protected static Framework m_framework = null;
+
+	protected WebDriver driver = null; 
+	protected TestConfig m_config = null;
+
+	private void setTestConfig() throws Exception {
+		String testCase = null;
+		testCase = this.getClass().getSimpleName();
+		m_config = m_framework.getTestConfig(testCase);
+	}
+
+	@BeforeClass
+	public void setup() throws Exception {
+		try {
+			if(m_framework == null)
+				m_framework = Framework.loadFramework(System.getProperty("configFile"));
+
+			WebDriverManager.initWebDriver(m_framework.getBrowserType());
+			driver = WebDriverManager.getWebDriver();
+			driver.manage().timeouts().implicitlyWait(m_framework.getImplicitWaitTimout(), TimeUnit.SECONDS);
+			driver.get(m_framework.getEnvironment().getLocation());
+			setTestConfig();			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			teardown();
+		}
+	}
+
+	@AfterClass
+	public void teardown() {
+		driver.quit();
+	}
+}

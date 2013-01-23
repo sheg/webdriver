@@ -1,0 +1,21 @@
+{
+	"execution": "sauce",
+	"project": "AMS",
+	"environment": "AMS_PRODUCTION",
+	"browserType": "googlechrome",
+	"implicitWaitTimeout": 1,
+	"screenShotDirectory":"/opt/work/screenshots",
+	"projectResources": {
+		"BTR":"/opt/work/TestBTR",
+		"AMS":"/opt/work/AutomationAMS",
+		"FRAMEWORK":"/opt/work/Automationframework"
+	},
+	"database": {
+		"dataBaseAttributes": {
+			"serverUrl": "",
+			"databaseName": "",
+			"username": "",
+			"password": ""
+		}
+	}
+}

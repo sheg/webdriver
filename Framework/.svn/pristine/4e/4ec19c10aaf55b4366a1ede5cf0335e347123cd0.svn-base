@@ -1,0 +1,49 @@
+package com.webdriver.qa.automation.framework;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
+
+import com.webdriver.qa.automation.framework.enums.BrowserType;
+
+public class WebDriverManager {
+	
+	private static WebDriver driver = null;
+	
+	public static void initWebDriver(BrowserType browserType) throws Exception {
+		WebDriver driver = null;
+		switch(browserType) {
+		case FIREFOX:
+			FirefoxProfile profile = new FirefoxProfile(); 
+			profile.setPreference("webdriver_enable_native_events", false);  
+			driver = new FirefoxDriver(profile);
+			break;
+		case GOOGLECHROME:		
+			driver = new ChromeDriver();
+			break;
+		case INTERNETEXPLORER:
+			driver = new InternetExplorerDriver();
+			break;
+		case SAFARI:
+			driver = new SafariDriver();
+			break;
+		case HEADLESS:
+			driver = new HtmlUnitDriver();
+			break;
+		default :
+			throw new Exception("Could not properly create a webdriver instance - browserType: " + browserType);
+		}
+		WebDriverManager.driver = driver;
+	}
+	
+	public static WebDriver getWebDriver() throws Exception {
+		if(WebDriverManager.driver == null) {
+			throw new Exception("Cannot get Webdriver - please initialize");
+		}
+		return WebDriverManager.driver;
+	}
+}

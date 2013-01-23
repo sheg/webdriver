@@ -1,0 +1,39 @@
+package com.webdriver.qa.automation.ams.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.webdriver.qa.automation.framework.page.BasePage;
+
+public class DashboardPage extends BasePage {
+		
+	public DashboardPage(WebDriver driver) {
+		super(driver);
+	}
+	
+	@FindBy(id = "username")
+	WebElement usernameDropDown;
+	
+	@FindBy(id = "button-broadcast")
+	WebElement webcastButton;
+	
+	public boolean validateLoggedIn(String loggedInUsername) {
+		boolean isLoggedIn = false;
+		if(usernameDropDown.getText().equals(loggedInUsername)) {
+			isLoggedIn = true;
+		}
+		return isLoggedIn;
+	}
+	
+	public CreatePage clickNewWebcastButton() throws Exception {
+		CreatePage createPage = PageFactory.initElements(getDriver(), CreatePage.class);
+		webcastButton.click();
+		
+		if(!createPage.validateOnContentPage()) {
+			throw new Exception("Could not validate being on the new content page");
+		}
+		return createPage;
+	}
+}

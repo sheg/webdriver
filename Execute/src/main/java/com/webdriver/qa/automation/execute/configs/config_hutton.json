@@ -1,0 +1,20 @@
+{
+	"project": "BTR",
+	"environment": "BTR_QA",
+	"browserType": "firefox",
+	"implicitWaitTimeout": 30,
+	"screenShotDirectory":"/opt/work/screenshots",
+	"projectResources": {
+		"BTR":"/opt/work/AutomationBTR",
+		"AMS":"/opt/work/AutomationAMS",
+		"FRAMEWORK":"/opt/work/Automationframework"
+	},
+	"database": {
+		"dataBaseAttributes": {
+			"serverUrl": "",
+			"databaseName": "",
+			"username": "",
+			"password": ""
+		}
+	}
+}

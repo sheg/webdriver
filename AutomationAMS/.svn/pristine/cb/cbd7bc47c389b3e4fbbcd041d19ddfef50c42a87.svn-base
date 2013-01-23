@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="2" failed="0" total="2" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="42" started-at="2012-05-18T21:01:29Z" finished-at="2012-05-18T21:01:29Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="42" started-at="2012-05-18T21:01:29Z" finished-at="2012-05-18T21:01:29Z">
+      <class name="com.webdriver.qa.automation.ams.testcases.login.TestAMSSuccessfulLogin">
+        <test-method status="FAIL" signature="setup()[pri:0, instance:com.webdriver.qa.automation.ams.testcases.login.TestAMSSuccessfulLogin@671381e7]" name="setup" is-config="true" duration-ms="0" started-at="2012-05-18T21:01:29Z" finished-at="2012-05-18T21:01:29Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at com.webdriver.qa.automation.framework.testcase.TestCase.teardown(TestCase.java:70)
+	at com.webdriver.qa.automation.framework.testcase.TestCase.setup(TestCase.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:551)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:175)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:107)
+	at org.testng.TestRunner.privateRun(TestRunner.java:768)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1185)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1110)
+	at org.testng.TestNG.run(TestNG.java:1022)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:109)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:202)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:173)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+        </test-method> <!-- setup -->
+        <test-method status="SKIP" signature="testSuccessfulLogin()[pri:0, instance:com.webdriver.qa.automation.ams.testcases.login.TestAMSSuccessfulLogin@671381e7]" name="testSuccessfulLogin" duration-ms="1" started-at="2012-05-18T21:01:29Z" finished-at="2012-05-18T21:01:29Z">
+        </test-method> <!-- testSuccessfulLogin -->
+        <test-method status="SKIP" signature="teardown()[pri:0, instance:com.webdriver.qa.automation.ams.testcases.login.TestAMSSuccessfulLogin@671381e7]" name="teardown" is-config="true" duration-ms="0" started-at="2012-05-18T21:01:29Z" finished-at="2012-05-18T21:01:29Z">
+        </test-method> <!-- teardown -->
+      </class> <!-- com.webdriver.qa.automation.ams.testcases.login.TestAMSSuccessfulLogin -->
+      <class name="com.webdriver.qa.automation.ams.testcases.create.CreateUploadAudioContent">
+        <test-method status="SKIP" signature="setup()[pri:0, instance:com.webdriver.qa.automation.ams.testcases.create.CreateUploadAudioContent@31b5998f]" name="setup" is-config="true" duration-ms="0" started-at="2012-05-18T21:01:29Z" finished-at="2012-05-18T21:01:29Z">
+        </test-method> <!-- setup -->
+        <test-method status="SKIP" signature="testCreateUploadAudioContent()[pri:0, instance:com.webdriver.qa.automation.ams.testcases.create.CreateUploadAudioContent@31b5998f]" name="testCreateUploadAudioContent" duration-ms="0" started-at="2012-05-18T21:01:29Z" finished-at="2012-05-18T21:01:29Z">
+        </test-method> <!-- testCreateUploadAudioContent -->
+        <test-method status="SKIP" signature="teardown()[pri:0, instance:com.webdriver.qa.automation.ams.testcases.create.CreateUploadAudioContent@31b5998f]" name="teardown" is-config="true" duration-ms="0" started-at="2012-05-18T21:01:29Z" finished-at="2012-05-18T21:01:29Z">
+        </test-method> <!-- teardown -->
+      </class> <!-- com.webdriver.qa.automation.ams.testcases.create.CreateUploadAudioContent -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

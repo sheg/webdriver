@@ -1,0 +1,49 @@
+2012-08-04 20:41:41,947 INFO Closing WebDriver 
+2012-08-04 20:41:42,088 INFO ********************* 
+2012-08-04 20:41:42,088 INFO  
+2012-08-04 20:41:42,089 INFO PASSED TESTS 
+2012-08-04 20:41:42,089 INFO NO TESTS PASSED 
+2012-08-04 20:41:42,089 INFO =============================================== 
+2012-08-04 20:41:42,089 INFO FAILED TESTS 
+2012-08-04 20:41:42,089 INFO NO TESTS FAILED 
+2012-08-04 20:42:21,538 INFO ********************* 
+2012-08-04 20:42:21,538 INFO Starting test case: TestInvalidLogin 
+2012-08-04 20:42:21,538 INFO Initializing WebDriver - FIREFOX 
+2012-08-04 20:42:21,580 INFO ********************* 
+2012-08-04 20:42:21,580 INFO  
+2012-08-04 20:42:21,580 INFO PASSED TESTS 
+2012-08-04 20:42:21,580 INFO NO TESTS PASSED 
+2012-08-04 20:42:21,580 INFO =============================================== 
+2012-08-04 20:42:21,580 INFO FAILED TESTS 
+2012-08-04 20:42:21,580 INFO NO TESTS FAILED 
+2012-08-04 20:49:13,603 INFO ********************* 
+2012-08-04 20:49:13,603 INFO Starting test case: TestInvalidLogin 
+2012-08-04 20:49:13,603 INFO Initializing WebDriver - FIREFOX 
+2012-08-04 20:49:13,665 INFO ********************* 
+2012-08-04 20:49:13,665 INFO  
+2012-08-04 20:49:13,665 INFO PASSED TESTS 
+2012-08-04 20:49:13,665 INFO NO TESTS PASSED 
+2012-08-04 20:49:13,665 INFO =============================================== 
+2012-08-04 20:49:13,665 INFO FAILED TESTS 
+2012-08-04 20:49:13,665 INFO NO TESTS FAILED 
+2012-08-04 21:20:14,169 INFO ********************* 
+2012-08-04 21:20:14,169 INFO Starting test case: TestInvalidLogin 
+2012-08-04 21:20:14,169 INFO Initializing WebDriver - FIREFOX 
+2012-08-04 21:21:04,398 ERROR Test failed - testInvalidLogin 
+2012-08-04 21:21:04,398 INFO Saving Screenshot 
+2012-08-04 21:21:04,683 INFO Screnshot saved - /opt/work/screenshots/2012.08.04/21.21.04.png 
+2012-08-04 21:21:04,687 INFO Closing WebDriver 
+2012-08-04 21:21:04,787 INFO WebDriver closed 
+2012-08-04 21:21:04,789 INFO ********************* 
+2012-08-04 21:21:04,789 INFO Starting test case: TestSuccessfulLogin 
+2012-08-04 21:21:04,790 INFO Initializing WebDriver - FIREFOX 
+2012-08-04 21:21:53,411 INFO Woo Hoo! The following test passed: testSuccessfulLogin 
+2012-08-04 21:21:53,412 INFO Closing WebDriver 
+2012-08-04 21:21:53,965 INFO WebDriver closed 
+2012-08-04 21:21:54,023 INFO ********************* 
+2012-08-04 21:21:54,023 INFO  
+2012-08-04 21:21:54,023 INFO PASSED TESTS 
+2012-08-04 21:21:54,023 INFO testSuccessfulLogin 
+2012-08-04 21:21:54,023 INFO =============================================== 
+2012-08-04 21:21:54,023 INFO FAILED TESTS 
+2012-08-04 21:21:54,024 INFO testInvalidLogin 

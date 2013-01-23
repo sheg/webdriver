@@ -1,0 +1,17 @@
+{
+	"project": "Invalid",
+	"environment": "ams_production",
+	"browserType": "FIREFOX",
+	"implicitWaitTimout": 30,
+	"projectResources": {
+		"BTR":"/Users/danielforkosh/Documents/workspace/AutomationBTR/src/main/java/com/webdriver/qa/automation/btr/testcases",
+		"AMS":"/Users/danielforkosh/Documents/workspace/AutomationAMS/src/main/java/com/webdriver/qa/automation/ams/testcases",
+		"FRAMEWORK":"/Users/danielforkosh/Documents/workspace/Automationframework/src/test/java/frameworktests/"
+	},
+	"database": {
+		"serverUrl": "192.168.6.219",
+		"databaseName": "BTR2QA",
+		"username": "sa",
+		"password": "8uh23ed"
+	}
+}

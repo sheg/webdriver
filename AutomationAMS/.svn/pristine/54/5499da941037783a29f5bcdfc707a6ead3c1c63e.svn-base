@@ -1,0 +1,90 @@
+/**
+ * TODO
+ *
+ */
+package com.webdriver.qa.automation.ams.testcases.player.live.settings;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.webdriver.qa.automation.ams.enums.PlayerSettings.Autoplay;
+import com.webdriver.qa.automation.ams.enums.PlayerSettings.ContentType;
+import com.webdriver.qa.automation.ams.enums.PlayerSettings.Size;
+import com.webdriver.qa.automation.ams.pages.DashboardPage;
+import com.webdriver.qa.automation.ams.pages.LivePlayerPage;
+import com.webdriver.qa.automation.ams.pages.LoginPage;
+import com.webdriver.qa.automation.ams.pages.PermaLinkPage;
+import com.webdriver.qa.automation.framework.testcase.TestCase;
+
+/**
+ * @author bhutton(brianhutton@cinchcast.com)
+ * Created on: 05/06/2012
+ *
+ * Test to successfully change the Live Player settings in Dashboard Page
+ */
+public class TestAMSLivePlayerSetSettingsVideoSize400x325AutoOn extends TestCase {
+
+  /**
+   * Test to successfully change the Live Player settings in Dashboard Page.
+   *
+   * @throws Exception
+   */
+  @Test
+  public void testChangeContentTypeSettingsToVideoSize400x325AutoOn () throws Exception {
+    // Retrieve data for test from config file
+    String username = m_config.getValue("username");
+    String password = m_config.getValue("password");
+
+    String height = m_config.getValue("height");
+    String width = m_config.getValue("width");
+    
+    ContentType type = m_config.getValue("contentType").equals("video") ? ContentType.VIDEO : ContentType.AUDIO;
+    Autoplay autoplay = m_config.getValue("autoplay").equals("off") ? Autoplay.OFF : Autoplay.ON;
+    String size_param = m_config.getValue("size");
+    Size size;
+    if(type == ContentType.AUDIO) {
+      size = Size.AUDIO;
+    } else {
+      size = size_param.equals("400x325") ? Size.s400x325 :
+             size_param.equals("320x265") ? Size.s320x265 :
+             size_param.equals("240x205") ? Size.s240x205 :
+             size_param.equals("custom") ? Size.CUSTOM : null;
+    }
+    if (size == null) {
+      throw new Exception("Size for player unrecognized. Value [" + size_param + "].");
+    }
+
+    // Log in to AMS
+    LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+    loginPage.inputLoginCredentials(username, password);
+    DashboardPage dashboardPage = loginPage.clickSignIn();
+
+    // In DAshboard, go to live player
+    dashboardPage.validateLoggedIn(username);
+    LivePlayerPage livePlayer = dashboardPage.clickOnLivePlayer();
+
+    // Change settings
+    // Size must be changed before contentType. If audio is selected, size settings disappear.
+    livePlayer.changeSize(size, height, width);
+    livePlayer.changeAutoplay(autoplay);
+    if (type.equals(ContentType.AUDIO)) {
+      width = livePlayer.retrieveWidth();
+    }
+    livePlayer.changeContentType(type);
+    // Save settings
+    livePlayer.saveLivePlayerSettings();
+    // Close Live Player and go back to Dashboard
+    dashboardPage = livePlayer.closeLivePlayer();
+
+    // Go to Live Player again to check settings were saved
+    dashboardPage.validateLoggedIn(username);
+    livePlayer = dashboardPage.clickOnLivePlayer();
+
+    // Validate settings
+    livePlayer.validateOnLivePlayerPage();
+    livePlayer.validateNewSettings(type, autoplay, size, height, width);
+    PermaLinkPage permaLinkPage = livePlayer.goToPermalinkPage();
+    permaLinkPage.validateOnPermaLinkPage();
+    permaLinkPage.validateSettings(type, size, autoplay, height, width);
+  }
+}

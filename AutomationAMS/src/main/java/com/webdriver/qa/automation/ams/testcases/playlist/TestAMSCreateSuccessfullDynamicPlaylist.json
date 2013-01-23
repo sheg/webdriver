@@ -1,0 +1,15 @@
+{
+	"testConfig": {
+		"attributes": {
+			"username": "brianhutton1@cinchcast.com",
+			"password": "asdqwe",
+			"type" : "dynamic",
+			"size" : "5",
+			"includeHidden" : "true",
+			"title" : "Title",
+			"description" : "Long Description",
+			"category" : "Arts",
+			"shortDescription" : "Short Description"
+		}
+	}
+}

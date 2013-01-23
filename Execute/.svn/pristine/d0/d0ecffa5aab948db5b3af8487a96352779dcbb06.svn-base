@@ -1,0 +1,36 @@
+package com.webdriver.qa.automation.execute.runner;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.testng.ITestResult;
+import org.testng.TestListenerAdapter;
+import org.testng.TestNG;
+
+public class SuiteRunner {
+	
+	public void executeTestNGSuite(String testFile) {
+		List<String> testSuites = new ArrayList<String>();
+		testSuites.add(testFile);
+		TestNG testNG = new TestNG();
+		TestListenerAdapter testListener = new CustomTestListener();
+		testNG.setTestSuites(testSuites);
+		testNG.addListener(testListener);
+		testNG.run();
+		
+		System.out.println("PASSED TESTS \n" + "------------------------");
+		System.out.println("Count: " + testListener.getPassedTests().size());
+		for(ITestResult passedResult : testListener.getPassedTests()) {
+			System.out.println(passedResult.getName());
+		}
+		
+		System.out.println("\n =============================================== \n");
+		
+		System.out.println("FAILED TESTS \n" + "------------------------");
+		System.out.println("Count: " + testListener.getFailedTests().size());
+		for(ITestResult failedResult : testListener.getFailedTests()) {
+			System.out.println(failedResult.getName());
+			failedResult.getThrowable().printStackTrace();
+		}
+	}
+}

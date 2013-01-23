@@ -1,0 +1,177 @@
+package com.webdriver.qa.automation.framework;
+
+import java.io.File;
+import java.io.FileReader;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
+import com.webdriver.qa.automation.framework.database.DataBaseConfig;
+import com.webdriver.qa.automation.framework.enums.BrowserType;
+import com.webdriver.qa.automation.framework.enums.Environment;
+import com.webdriver.qa.automation.framework.enums.Project;
+import com.webdriver.qa.automation.framework.exceptions.InvalidBrowserTypeException;
+import com.webdriver.qa.automation.framework.exceptions.InvalidEnvironmentException;
+import com.webdriver.qa.automation.framework.exceptions.TestProjectNotFoundException;
+import com.webdriver.qa.automation.framework.testcase.TestConfig;
+
+public class Framework {
+
+	private Map<String, TestConfig> testConfigurations = new HashMap<String, TestConfig>();
+	private Map<String,String> projectResources = new HashMap<String, String>();
+	public static DataBaseConfig databaseConfig = null;
+	private Environment environment = null;
+	private BrowserType browserType = null;
+	private long implicitWaitTimout = 0;
+	private Project projectType = null;
+	private static String screenShotDirectory = null;
+	private String execution = null;
+	private static JsonFileCollector jsonFilesCollector = new JsonFileCollector();
+
+	public static Framework loadFramework(String configFile) throws Exception {
+		if(configFile == null) {
+			throw new Exception("Cannot locate the following config file - path=" + configFile);
+		}
+		Gson gson = new Gson();
+		Map<String,String> projectResources = new HashMap<String, String>();
+		Framework framework = new Framework();
+		JsonParser parser = new JsonParser();
+		JsonElement jsonElement = null;
+		JsonObject jsonObject = null;
+
+		jsonElement = parser.parse(new FileReader(configFile));
+		jsonObject = jsonElement.getAsJsonObject();
+		
+		DataBaseConfig dataBaseConfig = gson.fromJson(jsonObject.get("database"), new TypeToken<DataBaseConfig>(){}.getType());
+		if(dataBaseConfig == null) {
+			throw new Exception("Data base configs not set properly");
+		}
+		BrowserType browserType = gson.fromJson(jsonObject.get("browserType").toString().toUpperCase(), new TypeToken<BrowserType>(){}.getType());
+		if(browserType == null) {
+			throw new InvalidBrowserTypeException("The following browser type was not set properly: " + jsonObject.get("browserType").toString()); 
+		}
+		Environment environment = gson.fromJson(jsonObject.get("environment").toString().toUpperCase(), new TypeToken<Environment>(){}.getType());
+		if(environment == null) {
+			throw new InvalidEnvironmentException("The following environment was not set properly: " + jsonObject.get("environment").toString());
+		}
+		Project project = gson.fromJson(jsonObject.get("project"), new TypeToken<Project>(){}.getType());
+		if(project == null) {
+			throw new TestProjectNotFoundException("Cannot locate the following project: " + project + "\n Available Projects: " + Arrays.toString(Project.values()));
+		}
+		Long implicitWaitTimout = gson.fromJson(jsonObject.get("implicitWaitTimeout"), new TypeToken<Long>(){}.getType());
+		
+		String screenShotDirectoryJson = jsonObject.get("screenShotDirectory").toString();
+		if(screenShotDirectoryJson == null) {
+			throw new Exception("Could not locate the screenshot directory in the config file - " + screenShotDirectoryJson);
+		}
+		String screenShotDirectory = gson.fromJson(jsonObject.get("screenShotDirectory").toString(), new TypeToken<String>(){}.getType());
+		String execution = gson.fromJson(jsonObject.get("execution").toString(), new TypeToken<String>(){}.getType());
+		
+		projectResources = gson.fromJson(jsonObject.get("projectResources"), new TypeToken<HashMap<String,String>>(){}.getType());
+		
+		jsonFilesCollector.populateAutomationJsonFiles(projectResources.get(project.toString()));
+		Map<String, TestConfig> testConfigs = getAllTestConfigsFromJson();
+		
+		framework.setDataBaseConfig(dataBaseConfig);
+		framework.setTestConfig(testConfigs);
+		framework.setBrowserType(browserType);
+		framework.setEnvironment(environment);
+		framework.setProject(project);
+		framework.setImplicitWaitTimout(implicitWaitTimout);
+		framework.setProjectResources(projectResources);
+		framework.setScreenShotDirectory(screenShotDirectory);
+		framework.setExecution(execution);
+		
+		return framework;
+	}
+
+	private static Map<String, TestConfig> getAllTestConfigsFromJson() throws Exception {
+		Gson gson = new Gson();		
+		JsonParser parser = new JsonParser();
+		JsonElement jsonElement = null;
+		JsonObject jsonObject = null;
+		Map<String, TestConfig> testConfigs = new HashMap<String, TestConfig>();
+		for(File file : jsonFilesCollector.getSystemJsonFiles()) {
+			jsonElement = parser.parse(new FileReader(file));
+			jsonObject = jsonElement.getAsJsonObject();
+			TestConfig testConfig = gson.fromJson(jsonObject.get("testConfig"), new TypeToken<TestConfig>(){}.getType());
+			testConfigs.put(file.getName().replace(".json", ""), testConfig);
+		}
+		return testConfigs; 
+	}
+	
+	public Map<String, TestConfig> getTestConfig() {
+		return testConfigurations;
+	}
+
+	public void setTestConfig(Map<String, TestConfig> testConfigs) {
+		testConfigurations = testConfigs;
+	}
+
+	public Environment getEnvironment() {
+		return environment;
+	}
+	public void setEnvironment(Environment environment) {
+		this.environment = environment;
+	}
+	public BrowserType getBrowserType() {
+		return browserType;
+	}
+	public void setBrowserType(BrowserType browserType) {
+		this.browserType = browserType;
+	}
+	public long getImplicitWaitTimout() {
+		return implicitWaitTimout;
+	}
+	public void setImplicitWaitTimout(long implicitWaitTimout) {
+		this.implicitWaitTimout = implicitWaitTimout;
+	}
+	public Project getProject() {
+		return this.projectType;
+	}
+
+	public void setProject(Project projectName) {
+		this.projectType = projectName;
+	}
+	
+	public Map<String,String> getProjectResources() {
+		return this.projectResources;
+	}
+	
+	public void setProjectResources(Map<String,String> resources) {
+		this.projectResources = resources;
+	}
+	
+	public void setDataBaseConfig(DataBaseConfig dataBaseConfig) {
+		Framework.databaseConfig = dataBaseConfig;
+	}
+	
+	public void setScreenShotDirectory(String path) {
+		Framework.screenShotDirectory = path;
+	}
+	
+	public static String getScreenShotDirectory() {
+		return Framework.screenShotDirectory;
+	}
+	
+	public String getExecution() {
+		return this.execution;
+	}
+
+	public void setExecution(String execution) {
+		this.execution = execution;
+	}
+	
+	public TestConfig getTestConfig(String testCase) throws Exception {
+		TestConfig config = null;
+		config = this.testConfigurations.get(testCase); 
+		if(config == null)
+			throw new Exception("No such test case in config: " + testCase);
+		return config;
+	}
+}

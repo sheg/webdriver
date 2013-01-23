@@ -1,0 +1,44 @@
+/**
+ * TODO
+ *
+ */
+package com.webdriver.qa.automation.ams.pages.manage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+
+import com.webdriver.qa.automation.framework.page.BasePage;
+
+/**
+ * @author bhutton(brianhutton@cinchcast.com)
+ * Created on: 14/06/2012
+ *
+ */
+public class PlaylistContentPage extends BasePage {
+
+  /**
+   * @param driver
+   */
+  public PlaylistContentPage(WebDriver driver) {
+    super(driver);
+  }
+
+  /**
+   * @param title
+   */
+  public PlaylistContentPage verifyPlaylistHasBeenDeleted(String title) throws Exception{
+    long wait_timeout = getImplicitWaitTimout();
+    try {
+      setImplicitWaitTimout(5 * 1000);
+      getDriver().findElement(By.linkText(title));
+      throw new Exception("Playlist with title [" + title + "] still present in page");
+    } catch (NoSuchElementException e) {
+      // Playlist was deleted
+    } finally {
+      setImplicitWaitTimout(wait_timeout);
+    }
+    return this;
+  }
+
+}

@@ -1,0 +1,30 @@
+package com.webdriver.qa.automation.ams.testcases.player.urls;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.webdriver.qa.automation.ams.pages.LoginPage;
+import com.webdriver.qa.automation.framework.testcase.TestCase;
+
+public class TestPlayerTypeSingleManage extends TestCase {
+
+	/**
+	 * Precondition - The account needs to have archived content available.
+	 * 
+	 * Asserts that on the single manage page:
+	 * 1) The embed player is a eesp
+	 * 2) Permalink player is ses
+	 * 3) Preview player is eesp
+	 * 
+	 * @throws Exception
+	 */
+	
+	@Test
+	public void testPlayerTypeSingleManage() throws Exception {
+		LoginPage login = PageFactory.initElements(driver, LoginPage.class);
+		login.inputLoginCredentials(m_config.getValue("username"), m_config.getValue("password"));
+		login.clickSignIn();
+		
+		
+	}
+}

@@ -1,0 +1,53 @@
+package com.webdriver.qa.automation.execute.runner;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriverException;
+import org.testng.ITestResult;
+import org.testng.TestListenerAdapter;
+
+import com.webdriver.qa.automation.framework.Framework;
+import com.webdriver.qa.automation.framework.WebDriverManager;
+
+public class CustomTestListener extends TestListenerAdapter {
+
+	WebDriverManager driverManager = new WebDriverManager();
+	
+	private void saveScreenShot() throws WebDriverException, Exception {
+		Date date = new Date();		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd");
+		String folderDate = dateFormat.format(date);
+		dateFormat.applyPattern("HH.mm.ss");
+		String fileDate = dateFormat.format(date);
+
+		File screenshotFile = ((TakesScreenshot)driverManager.getWebDriver()).getScreenshotAs(OutputType.FILE);
+		File screenshotDirectory = new File(Framework.getScreenShotDirectory() + "/" + folderDate);
+		if(!screenshotDirectory.exists()) {
+			screenshotDirectory.mkdirs();
+		}
+		File screenshotFilePath = new File(screenshotDirectory.getAbsoluteFile() + "/" + fileDate + ".png");
+		FileUtils.copyFile(screenshotFile, screenshotFilePath);
+	}
+
+	@Override
+	public void onTestFailure(ITestResult testResult) {
+		super.onTestFailure(testResult);
+		try {
+			saveScreenShot();
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+			System.out.println("Error taking screenshot");
+		}
+	}
+
+	@Override
+	public void onTestSuccess(ITestResult testResult) {
+		super.onTestSuccess(testResult);
+	}
+}

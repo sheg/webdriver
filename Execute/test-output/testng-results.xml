@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="125055" started-at="2013-01-21T12:34:40Z" finished-at="2013-01-21T12:36:45Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="125055" started-at="2013-01-21T12:34:40Z" finished-at="2013-01-21T12:36:45Z">
+      <class name="com.webdriver.qa.automation.ams.testcases.login.TestAMSSuccessfulLogin">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.webdriver.qa.automation.ams.testcases.login.TestAMSSuccessfulLogin@15aaf0b3]" name="setup" is-config="true" duration-ms="32278" started-at="2013-01-21T12:34:41Z" finished-at="2013-01-21T12:35:13Z">
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testAMSSuccessfulLogin()[pri:0, instance:com.webdriver.qa.automation.ams.testcases.login.TestAMSSuccessfulLogin@15aaf0b3]" name="testAMSSuccessfulLogin" duration-ms="91119" started-at="2013-01-21T12:35:13Z" finished-at="2013-01-21T12:36:44Z">
+        </test-method> <!-- testAMSSuccessfulLogin -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.webdriver.qa.automation.ams.testcases.login.TestAMSSuccessfulLogin@15aaf0b3]" name="teardown" is-config="true" duration-ms="965" started-at="2013-01-21T12:36:44Z" finished-at="2013-01-21T12:36:45Z">
+        </test-method> <!-- teardown -->
+      </class> <!-- com.webdriver.qa.automation.ams.testcases.login.TestAMSSuccessfulLogin -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

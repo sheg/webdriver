@@ -1,0 +1,8 @@
+{
+	"testConfig": {
+		"attributes": {
+			"username": "brianhutton@cinchcast.com",
+			"password": "wrongpassword"
+		}
+	}
+}

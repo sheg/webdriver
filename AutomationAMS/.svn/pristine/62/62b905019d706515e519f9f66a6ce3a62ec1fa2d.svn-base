@@ -1,0 +1,97 @@
+/**
+ * TODO
+ *
+ */
+package com.webdriver.qa.automation.ams.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.webdriver.qa.automation.ams.enums.PlayerSettings.Autoplay;
+import com.webdriver.qa.automation.ams.enums.PlayerSettings.ContentType;
+import com.webdriver.qa.automation.ams.enums.PlayerSettings.Size;
+import com.webdriver.qa.automation.framework.page.BasePage;
+
+/**
+ * @author bhutton(brianhutton@cinchcast.com)
+ * Created on: Jul 13, 2012
+ *
+ */
+public class PermaLinkPage extends BasePage {
+
+  /**
+   * JWPlayer Wrapper #Object
+   */
+  @FindBy(id = "mediaplayer_wrapper")
+  WebElement mediaPlayer_wrapper;
+
+  /**
+   * 
+   */
+  @FindBy(name = "flashvars")
+  WebElement player_flashvars;
+
+  /**
+   * @param driver
+   */
+  public PermaLinkPage(WebDriver driver) {
+    super(driver);
+  }
+
+  public boolean validateSettings(ContentType type, Size size, Autoplay autoplay, String heigth, String width) throws Exception {
+    // Validate Size & Content Type
+    switch (type) {
+    case AUDIO:
+      validateSize(size.getWidth(), Size.AUDIO.getHeight());
+      break;
+    case VIDEO:
+      if (size == Size.CUSTOM) {
+        validateSize(Integer.valueOf(width), Integer.valueOf(heigth));
+      } else {
+        validateSize(size.getWidth(), size.getHeight());
+      }
+
+      break;
+    }
+
+    // Validate Autoplay
+    switch (autoplay) {
+    case ON:
+        if (!player_flashvars.getAttribute("value").contains("&autostart=true&")) {
+          throw new Exception ("Could not validate Player Autoplay setting. Expected [ON] but got [OFF]");
+        }
+      break;
+    case OFF:
+      if (!player_flashvars.getAttribute("value").contains("&autostart=false&")) {
+        throw new Exception ("Could not validate Player Autoplay setting. Expected [OFF] but got [ON]");
+      }
+      break;
+    }
+    return true;
+  }
+
+  /**
+   * @param size
+   * @throws Exception
+   */
+  private void validateSize(int width, int height) throws Exception {
+    String mediaPlayer_style = mediaPlayer_wrapper.getAttribute("style");
+    if (!mediaPlayer_style.contains("width: " + width + "px; height: " + height + "px;")) {
+      throw new Exception ("Could not validate Player Size. Expected \n" +
+          "[width: " + width + "px; height: " + height + "px;]\nBut got\n" +
+          "[" + mediaPlayer_style.substring(mediaPlayer_style.indexOf("width:")));
+    }
+  }
+
+  /**
+   * @return
+   */
+  public boolean validateOnPermaLinkPage() throws Exception{
+    if (!mediaPlayer_wrapper.isDisplayed()) {
+      throw new Exception ("Could not validate being in the permalink page");
+    }
+    return true;
+  }
+
+}

@@ -1,0 +1,300 @@
+/**
+ * TODO
+ *
+ */
+package com.webdriver.qa.automation.ams.pages;
+
+import static org.testng.Assert.assertTrue;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.webdriver.qa.automation.ams.pages.manage.PlaylistContentPage;
+import com.webdriver.qa.automation.ams.pages.manage.UpcomingEventPage;
+import com.webdriver.qa.automation.ams.pages.registration.ManageRegistrationFormsPage;
+import com.webdriver.qa.automation.framework.page.AmsPage;
+
+/**
+ * @author bhutton(brianhutton@cinchcast.com)
+ * Created on: Aug 7, 2012
+ *<br>
+ * Java Page Object for the Navigation Bar Header.<br>
+ * This Java class contains all identifiers available to the user in the 
+ * Navigation Bar Header along with methods to mimic user interaction.<br>
+ */
+public class NavBarPageObject extends AmsPage {
+
+  /**
+   * Link to Dashboard
+   */
+  @FindBy(linkText = "Cinchcast")
+  WebElement goToDashboard;
+
+  /**
+   * Link to Create Page
+   */
+  @FindBy(id = "createlink")
+  WebElement createLink;
+
+  /**
+   * Manage DropDown. Access links to Upcoming, archived and playlist
+   */
+  @FindBy(linkText = "Manage")
+  WebElement manageDropdDown;
+
+  /**
+   * Link to Upcoming Events Tab
+   */
+  @FindBy(linkText = "Upcoming Events")
+  WebElement upcomingEventsLink;
+
+  /**
+   * Link to Archived Content Tab
+   */
+  @FindBy(linkText = "Archived Content")
+  WebElement archivedContentLink;
+
+  /**
+   * Link to Playlist Tab
+   */
+  @FindBy(linkText = "Playlist")
+  WebElement playlistLink;
+
+  /**
+   * Link to Help Page
+   */
+  @FindBy(id = "link-help")
+  WebElement helpLink;
+
+  /**
+   * Help Page icon
+   */
+  @FindBy(css = "i.icon-help.vector")
+  WebElement helpIcon;
+
+  /**
+   * Username DropDown. Access to Disconnect from social sites, account settings,
+   * Manage Registration Forms and Sign Out 
+   */
+  @FindBy(id = "username")
+  WebElement usernameDropDown;
+
+  /**
+   * Disconnect from Facebook link
+   */
+  @FindBy(linkText = "Disconnect from Facebook")
+  WebElement facebook_disconnect;
+
+  /**
+   * Disconnect from Twitter link
+   */
+  @FindBy(linkText = "Disconnect from Twitter")
+  WebElement twitter_disconnect;
+
+  /**
+   * Manage Registration Forms Link
+   */
+  @FindBy(linkText = "Manage registration forms")
+  WebElement manageRegistrationFormsLink;
+
+  /**
+   * Account Settings Link
+   */
+  @FindBy(linkText = "Account settings")
+  WebElement accountSettingsLink;
+
+  /**
+   * Sign Out Link
+   */
+  @FindBy(linkText = "Sign out")
+  WebElement signOutLink;
+
+  /**
+   * Default Constructor
+   * 
+   * @param driver
+   */
+  public NavBarPageObject(WebDriver driver) {
+    super(driver);
+  }
+
+  /**
+   * Clicks the cinchcast logo in the navbar to redirect user to {@link DashboardPage}
+   * @return an instance of {@link DashboardPage}
+   */
+  public DashboardPage goToDashboard() {
+    goToDashboard.click();
+
+    DashboardPage dashboard = PageFactory.initElements(getDriver(), DashboardPage.class);
+
+    assertTrue(dashboard.validateInDashboardPage(), "Could not validate being in Dashboard Page");
+
+    return dashboard;
+  }
+
+  /**
+   * Clicks the Create Link in the navbar to redirect user to the {@link CreatePage}
+   * @return an instance of {@link CreatePage}
+   */
+  public CreatePage goToCreatePage() {
+    createLink.click();
+
+    CreatePage createPage = PageFactory.initElements(getDriver(), CreatePage.class);
+
+    assertTrue(createPage.validateOnCreatePage(), "Could not validate being in Create Page");
+
+    return createPage;
+  }
+
+  /**
+   * Hover over the Manage Dropdown and clicks the Archived Content link to redirect users to {@link SingleArchivePage}
+   * @return an instance of {@link SingleArchivePage}
+   */
+  public SingleArchivePage goToArchivedContentPage() {
+    displayDropdown(manageDropdDown);
+    archivedContentLink.click();
+
+    SingleArchivePage content = PageFactory.initElements(getDriver(), SingleArchivePage.class);
+
+    assertTrue(content.validateOnArchivedContentPage(), "Could not validate being in Archived Contet Page");
+
+    return content;
+  }
+
+  /**
+   * Hover over the Manage Dropdown and clicks the Upcoming Events Link to redirect users to {@link UpcomingEventPage}
+   * @return an isntance of {@link UpcomingEventPage}
+   */
+  public UpcomingEventPage goToUpcomingEventPage() {
+    displayDropdown(manageDropdDown);
+    upcomingEventsLink.click();
+
+    UpcomingEventPage upcoming = PageFactory.initElements(getDriver(), UpcomingEventPage.class);
+
+    assertTrue(upcoming.validateOnUpcomingEventPage(), "Could not validate being in Upcoming Event Page");
+
+    return upcoming;
+  }
+
+  /**
+   * Hover over the Manage Dropdown and clicks the Playlist Link to redirect users to {@link PlaylistContentPage}
+   * @return an instance of {@link PlaylistContentPage}
+   */
+  public PlaylistContentPage goToPlaylistContentPage() {
+    displayDropdown(manageDropdDown);
+    playlistLink.click();
+
+    PlaylistContentPage playlist = PageFactory.initElements(getDriver(), PlaylistContentPage.class);
+
+    assertTrue(playlist.validateOnPlaylistContentPage(), "Could not validate being in Playlist Contet Page");
+
+    return playlist;
+  }
+
+  /**
+   * Clicks the help link in the nav bar tor edirect users to {@link HelpPage}
+   * @return an isntance of {@link HelpPage}
+   */
+  public HelpPage goToHelpPage() {
+    helpLink.click();
+
+    HelpPage help = PageFactory.initElements(getDriver(), HelpPage.class);
+
+    assertTrue(help.validateOnHelpPage(), "Could not validate being in Help Page");
+
+    return help;
+  }
+
+  /**
+   * Hover over the Username Dropdown and clicks the disconnect from Facebook link to disconnect gigya information for that user
+   */
+  public void disconnectFromFacebook() {
+    displayDropdown(usernameDropDown);
+    facebook_disconnect.click();
+
+    // Confirm disconnection
+    Alert alert = getDriver().switchTo().alert();
+    String alertText = alert.getText();
+    assertTrue(alertText.equals("connections removed."), "Error disconnecting from facebook. Expected [connections removed.], but got [" + alertText + "]");
+    alert.accept();
+  }
+
+  /**
+   * Hover over the Username Dropdown and clicks the disconnect from Twitter link to disconnect gigya information for that user
+   */
+  public void disconnectFromTwitter() {
+    displayDropdown(usernameDropDown);
+    twitter_disconnect.click();
+
+    // Confirm disconnection
+    Alert alert = getDriver().switchTo().alert();
+    String alertText = alert.getText();
+    assertTrue(alertText.equals("connections removed."), "Error disconnecting from twitter. Expected [connections removed.], but got [" + alertText + "]");
+    alert.accept();
+  }
+
+  /**
+   * Hover over the Username Dropdown and clicks the Manage Registration Forms link to redirect users to {@link ManageRegistrationFormsPage}
+   * @return an isntance of {@link ManageRegistrationFormsPage}
+   */
+  public ManageRegistrationFormsPage goToManageRegistrationFormsPage() {
+    displayDropdown(usernameDropDown);
+    manageRegistrationFormsLink.click();
+
+    ManageRegistrationFormsPage manageForms = PageFactory.initElements(getDriver(), ManageRegistrationFormsPage.class);
+
+    assertTrue(manageForms.validateOnManageRegistrationFormsPage(), "Could not validate being in Manage Registration Forms Page.");
+
+    return manageForms;
+  }
+
+  /**
+   * Hover over the Username Dropdown and clicks the Account Settings Link to redirect users to {@link AccountSettingsPage} 
+   * @return an instance of {@link AccountSettingsPage}
+   */
+  public AccountSettingsPage goToAccountSettingsPage() {
+    displayDropdown(usernameDropDown);
+    accountSettingsLink.click();
+
+    AccountSettingsPage accountSettings = PageFactory.initElements(getDriver(), AccountSettingsPage.class);
+
+    assertTrue(accountSettings.validateOnAccountSettingsPage(), "Could not validate being in Accoutn Settings Page.");
+
+    return accountSettings;
+  }
+
+  /**
+   * Hover over the Username Dropdown and clicks the Sign Out Link to sign out the user and redirect to {@link LoginPage}
+   * @return an instance of {@link LoginPage}
+   */
+  public LoginPage signOut() {
+    displayDropdown(usernameDropDown);
+    signOutLink.click();
+
+    //Workaround in case we run into an alert - e.g. leaving the edit page.
+    try {
+    	Alert alert = getDriver().switchTo().alert();
+    	alert.accept();			    	
+    }
+    catch(Exception e) {}
+	
+    LoginPage login = PageFactory.initElements(getDriver(), LoginPage.class);
+
+    assertTrue(login.validateOnLoginPage(), "Could not validate being in Login Page.");
+
+    return login;
+  }
+
+  /**
+   * Creates an Action to mimic user mouse hovering over a WebElement
+   * @param dropDown the WebElement to move the mouse to
+   */
+  private void displayDropdown(WebElement dropDown) {
+    Actions builder = new Actions(getDriver());
+    builder.moveToElement(dropDown).build().perform();
+  }
+}

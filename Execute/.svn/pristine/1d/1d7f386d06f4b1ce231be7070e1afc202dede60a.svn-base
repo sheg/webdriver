@@ -1,0 +1,18 @@
+package com.webdriver.qa.automation.execute.runner;
+
+import org.testng.ITestResult;
+import org.testng.TestListenerAdapter;
+
+public class CustomTestListener extends TestListenerAdapter {
+
+	@Override
+	public void onTestFailure(ITestResult testResult) {
+		super.onTestFailure(testResult);
+	
+	}
+
+	@Override
+	public void onTestSuccess(ITestResult testResult) {
+		super.onTestSuccess(testResult);
+	}
+}

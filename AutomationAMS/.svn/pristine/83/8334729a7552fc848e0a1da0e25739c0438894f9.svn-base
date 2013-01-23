@@ -1,0 +1,66 @@
+package com.webdriver.qa.automation.ams.pages;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.webdriver.qa.automation.framework.page.AmsPage;
+
+public class SingleArchivePage extends AmsPage {
+
+	public SingleArchivePage(WebDriver driver) {
+		super(driver);
+	}
+
+	List<WebElement> archivedContents = getDriver().findElements(By.id("content-list-items")); 
+	
+	@FindBy(css = "#maincontent meta[itemprop='url']")
+	WebElement previewPlayerUrl;
+	
+	@FindBy(id = "tab-content")
+	WebElement archivedContentTab;
+	
+	public void verifyArchivedContentPage() throws Exception {
+		if(!archivedContentTab.getAttribute("class").equals("active")) {
+			throw new Exception("The archived content tab is not active");
+		}
+	}
+	
+	/**
+	 * Click on the n-th item in the Archived content list. Indexed at 0.
+	 * 
+	 * @param itemInList
+	 */
+	public void clickOnNthItem(int itemInList) throws Exception {
+		WebElement archivedContentElement = archivedContents.get(itemInList);
+		if(archivedContentElement == null) {
+			throw new Exception("Could not find the " + itemInList + " item in the list. List size = " + archivedContents.size());
+		}
+		archivedContentElement.click();
+	}
+	
+	/**
+	 * 
+	 * @return type of player. i.e. ses, sep, eesp etc.
+	 */
+	public String getPreviewPlayerUrlType() {
+		return previewPlayerUrl.getText().split("/") [3];
+	}
+
+  /**
+   * Validates if user is on Archived Content Page
+   *
+   * @return Boolean:
+   * <ul>
+   *  <li><code>true</code> if Upcoming, content and playlist tabs are visible
+   *  <li><code>false</code> otherwise
+   * </ul>
+   * @throws Exception When not in Archived Content Page
+   */
+  public boolean validateOnArchivedContentPage() {
+    return archivedContentTab.getAttribute("style").isEmpty();
+  }
+}

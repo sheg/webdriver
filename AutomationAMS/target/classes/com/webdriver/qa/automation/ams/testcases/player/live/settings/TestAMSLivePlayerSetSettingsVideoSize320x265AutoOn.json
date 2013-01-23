@@ -1,0 +1,13 @@
+{
+	"testConfig": {
+		"attributes": {
+			"username": "brianhutton1@cinchcast.com",
+			"password": "asdqwe",
+			"contentType" : "video",
+			"autoplay" : "on",
+			"size" : "320x265",
+			"height" : "",
+			"width" : ""
+		}
+	}
+}

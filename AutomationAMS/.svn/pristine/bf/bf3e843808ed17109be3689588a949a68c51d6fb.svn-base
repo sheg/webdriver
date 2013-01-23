@@ -1,0 +1,83 @@
+package com.webdriver.qa.automation.ams.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.webdriver.qa.automation.framework.page.BasePage;
+
+public class DashboardPage extends BasePage {
+    
+  public DashboardPage(WebDriver driver) {
+    super(driver);
+  }
+  
+  @FindBy(id = "username")
+  WebElement usernameDropDown;
+  
+  @FindBy(id = "button-broadcast")
+  WebElement webcastButton;
+
+  /**
+   * Create New Playlist Quick Access #Button
+   */
+  @FindBy(id = "button-playlist")
+  WebElement playlistButton;
+
+  /**
+   * Opens the Live Player #Button
+   */
+  @FindBy(id = "button-liveplayer")
+  WebElement playerButton;
+
+  public boolean validateLoggedIn(String loggedInUsername) {
+    boolean isLoggedIn = false;
+    if(usernameDropDown.getText().equals(loggedInUsername)) {
+      isLoggedIn = true;
+    }
+    return isLoggedIn;
+  }
+
+  /**
+   * Clicks on the New Playlist Quick Access button
+   *
+   * @return {@link CreatePlaylistPage}
+   * @throws Exception When the validation for being in the playlist page fails.
+   */
+  public CreatePlaylistPage clickNewPlaylistButton() throws Exception {
+    playlistButton.click();
+
+    CreatePlaylistPage playlistPage = PageFactory.initElements(getDriver(), CreatePlaylistPage.class);
+    if (!playlistPage.validateOnCreatePlaylistPage()) {
+      throw new Exception("Could not validate being on the new playlist page");
+    }
+    return playlistPage;
+  }
+
+  /**
+   * Clicks on the Live Player Button
+   *
+   * @return {@link LivePlayerPage}
+   * @throws Exception When the validation for being in the live player page fails.
+   */
+  public LivePlayerPage clickOnLivePlayer() throws Exception {
+    playerButton.click();
+
+    LivePlayerPage livePlayer = PageFactory.initElements(getDriver(), LivePlayerPage.class);
+    if (!livePlayer.validateOnLivePlayerPage()) {
+      throw new Exception("Could not validate being on the live player page.");
+    }
+    return livePlayer ;
+  }
+
+  public CreatePage clickNewWebcastButton() throws Exception {
+    CreatePage createPage = PageFactory.initElements(getDriver(), CreatePage.class);
+    webcastButton.click();
+    
+    if(!createPage.validateOnContentPage()) {
+      throw new Exception("Could not validate being on the new content page");
+    }
+    return createPage;
+  }
+}

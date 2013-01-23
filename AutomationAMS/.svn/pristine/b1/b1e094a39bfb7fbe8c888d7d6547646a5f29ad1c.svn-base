@@ -1,0 +1,120 @@
+/**
+ * TODO
+ * One class, one test.
+ * No DSL
+ * 
+ */
+package com.webdriver.qa.automation.ams.testcases.playlist;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.webdriver.qa.automation.ams.enums.ContentCategory;
+import com.webdriver.qa.automation.ams.enums.PlaylistType;
+import com.webdriver.qa.automation.ams.pages.DashboardPage;
+import com.webdriver.qa.automation.ams.pages.LoginPage;
+import com.webdriver.qa.automation.ams.pages.CreatePlaylistPage;
+import com.webdriver.qa.automation.ams.pages.edit.EditPlaylistPage;
+import com.webdriver.qa.automation.framework.testcase.TestCase;
+
+/**
+ * @author bhutton(brianhutton@cinchcast.com)<br>
+ * Created on: 03/06/2012<br>
+ * 
+ *         Test to successfully create a Dynamic Playlist
+ */
+public class TestAMSCreateSuccessfullDynamicPlaylist extends TestCase {
+
+  /**
+   * <b>Test</b><br>
+   * Test to successfully create a Dynamic Playlist
+   *
+   * @throws Exception
+   */
+  @Test
+  public void testCreateSuccessfullDynamicPlaylist() throws Exception {
+    String username = m_config.getValue("username");
+    String password = m_config.getValue("password");
+
+    LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+    loginPage.inputLoginCredentials(username, password);
+    DashboardPage dashboardPage = loginPage.clickSignIn();
+    dashboardPage.validateLoggedIn(username);
+    CreatePlaylistPage playlistPage = dashboardPage.clickNewPlaylistButton();
+
+    // Get data from config file to create playlist
+    PlaylistType type = m_config.getValue("type").equals("dynamic") ?
+        PlaylistType.DYNAMIC : PlaylistType.MANUAL;
+    int size = Integer.parseInt(m_config.getValue("size"));
+    boolean includeHidden = Boolean.valueOf(m_config.getValue("includeHidden"));
+    String title = m_config.getValue("title").isEmpty() ?
+        "Title" + System.currentTimeMillis() : m_config.getValue("title");
+    String description = m_config.getValue("description");
+    ContentCategory category = extractCategoryFromString(m_config.getValue("category"));
+    String shortDescription = m_config.getValue("shortDescription");
+
+    // Fill form to create Playlist
+    playlistPage.fillOutPlaylistForm(type, size, includeHidden, title, description, category,
+        shortDescription);
+
+    // Save playlist
+    EditPlaylistPage editPlaylistPage = playlistPage.savePlaylist();
+    editPlaylistPage.confirmCreationOfPlaylist();
+    editPlaylistPage.validateOnEditPlaylistPage();
+    // Validate values for playlist after creation.
+    editPlaylistPage.validateValues(type, size, includeHidden, title, description, category,
+        shortDescription);
+  }
+
+  /**
+   * @return
+   * @throws Exception
+   */
+  private ContentCategory extractCategoryFromString(String category) throws Exception {
+    if (category.equals("arts")) {
+      return ContentCategory.ARTS;
+    } else if (category.equals("automotive")) {
+      return ContentCategory.AUTOMOTIVE;
+    } else if (category.equals("business")) {
+      return ContentCategory.BUSINESS;
+    } else if (category.equals("comedy")) {
+      return ContentCategory.COMEDY;
+    } else if (category.equals("education")) {
+      return ContentCategory.EDUCATION;
+    } else if (category.equals("entertainment")) {
+      return ContentCategory.ENTERTAINMENT;
+    } else if (category.equals("games & hobbies")) {
+      return ContentCategory.GAMES_AND_HOBBIES;
+    } else if (category.equals("health")) {
+      return ContentCategory.HEALTH;
+    } else if (category.equals("kids and families")) {
+      return ContentCategory.KIDS_AND_FAMILIES;
+    } else if (category.equals("music")) {
+      return ContentCategory.MUSIC;
+    } else if (category.equals("new & politics")) {
+      return ContentCategory.NEWS_AND_POLITICS;
+    } else if (category.equals("no category")) {
+      return ContentCategory.NO_CATEGORY;
+    } else if (category.equals("politics")) {
+      return ContentCategory.POLITICS;
+    } else if (category.equals("politics, sustainability & activism")) {
+      return ContentCategory.POLITICS_SUSTAINABILITY_AND_ACTIVISM;
+    } else if (category.equals("religion & spirituality")) {
+      return ContentCategory.RELIGION_AND_SPIRITUALITY;
+    } else if (category.equals("science & medicine")) {
+      return ContentCategory.SCIENCE_AND_MEDICINE;
+    } else if (category.equals("society & culture")) {
+      return ContentCategory.SOCIETY_AND_CULTURE;
+    } else if (category.equals("sports& recreation")) {
+      return ContentCategory.SPORTS_AND_RECREATION;
+    } else if (category.equals("technology")) {
+      return ContentCategory.TECHNOLOGY;
+    } else if (category.equals("travel")) {
+      return ContentCategory.TRAVEL;
+    } else if (category.equals("tv & films")) {
+      return ContentCategory.TV_AND_FILMS;
+    } else {
+      throw new Exception("Content Category in config file not valid. [" + category + "]");
+    }
+  }
+}

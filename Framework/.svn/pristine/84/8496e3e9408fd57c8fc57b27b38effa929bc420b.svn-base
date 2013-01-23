@@ -1,0 +1,83 @@
+[0.000][INFO]:      ChromeDriver 19.0.1068.0 /Users/danielforkosh/Downloads/chromedriver
+[0.436][FINE]:      Initializing session with capabilities {
+   "browserName": "chrome",
+   "chrome.switches": [  ],
+   "chromeOptions": {
+      "args": [  ],
+      "extensions": [  ]
+   },
+   "platform": "ANY",
+   "version": ""
+}
+
+[0.436][INFO]:      Launching chrome: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --disable-hang-monitor --disable-prompt-on-repost --dom-automation --full-memory-crash-report --no-default-browser-check --no-first-run --ignore-certificate-errors --homepage=about:blank
+[1.169][INFO]:      Connected to Chrome successfully. Version: 18.0.1025.168
+[1.222][FINE]:      Command received (/session/01c57088bfa13698267542902e0a7520)
+[1.222][FINE]:      Command finished (/session/01c57088bfa13698267542902e0a7520) with response {
+   "sessionId": "01c57088bfa13698267542902e0a7520",
+   "status": 0,
+   "value": {
+      "acceptSslCerts": false,
+      "applicationCacheEnabled": false,
+      "browserConnectionEnabled": false,
+      "browserName": "chrome",
+      "chrome.chromedriverVersion": "19.0.1068.0",
+      "chrome.nativeEvents": false,
+      "cssSelectorsEnabled": true,
+      "databaseEnabled": false,
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "locationContextEnabled": false,
+      "nativeEvents": true,
+      "platform": "mac",
+      "rotatable": false,
+      "takesScreenshot": true,
+      "version": "18.0.1025.168",
+      "webStorageEnabled": false
+   }
+}
+
+[1.244][FINE]:      Command received (/session/01c57088bfa13698267542902e0a7520/timeouts/implicit_wait) with params {
+   "ms": 30000
+}
+
+[1.244][FINER]:     Waiting for all views to stop loading...
+[1.246][FINER]:     Done waiting for all views to stop loading
+[1.246][FINER]:     Waiting for all views to stop loading...
+[1.247][FINER]:     Done waiting for all views to stop loading
+[1.247][FINE]:      Command finished (/session/01c57088bfa13698267542902e0a7520/timeouts/implicit_wait) with response {
+   "sessionId": "01c57088bfa13698267542902e0a7520",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[1.250][FINE]:      Command received (/session/01c57088bfa13698267542902e0a7520/url) with params {
+   "url": "http://www.blogtalkradio.com"
+}
+
+[1.250][FINER]:     Waiting for all views to stop loading...
+[1.250][FINER]:     Done waiting for all views to stop loading
+[40.767][FINER]:    Waiting for all views to stop loading...
+[40.768][FINER]:    Done waiting for all views to stop loading
+[40.768][FINE]:     Command finished (/session/01c57088bfa13698267542902e0a7520/url) with response {
+   "sessionId": "01c57088bfa13698267542902e0a7520",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[40.783][FINE]:     Command received (/session/01c57088bfa13698267542902e0a7520/screenshot)
+[40.783][FINER]:    Waiting for all views to stop loading...
+[40.786][FINER]:    Done waiting for all views to stop loading
+[41.331][FINER]:    Waiting for all views to stop loading...
+[41.332][FINER]:    Done waiting for all views to stop loading
+[41.332][FINE]:     Command finished (/session/01c57088bfa13698267542902e0a7520/screenshot) with response {
+   "sessionId": "01c57088bfa13698267542902e0a7520",
+   "status": 0,
+   "value": "iVBORw0KGgoAAAANSUhEUgAABAsAAAbUCAIAAAAWrwgzAAAgAElEQVR4nOydeXwU9f3/XzOzO3tvks19kZMEAuE+Inc4PRAFr..."
+}
+
+[41.654][FINE]:     Command received (/session/01c57088bfa13698267542902e0a7520)

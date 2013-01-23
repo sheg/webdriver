@@ -1,0 +1,46 @@
+2012-08-07 09:45:05,520 INFO ********************* 
+2012-08-07 09:45:05,536 INFO Starting test case: TestInvalidLogin 
+2012-08-07 09:45:05,536 INFO Initializing WebDriver - GOOGLECHROME 
+2012-08-07 10:28:48,046 INFO ********************* 
+2012-08-07 10:28:48,057 INFO Starting test case: TestInvalidLogin 
+2012-08-07 10:28:48,058 INFO Initializing WebDriver - GOOGLECHROME 
+2012-08-07 17:47:25,318 INFO Closing WebDriver 
+2012-08-07 17:47:25,480 INFO ********************* 
+2012-08-07 17:47:25,481 INFO  
+2012-08-07 17:47:25,481 INFO PASSED TESTS 
+2012-08-07 17:47:25,481 INFO NO TESTS PASSED 
+2012-08-07 17:47:25,481 INFO =============================================== 
+2012-08-07 17:47:25,481 INFO FAILED TESTS 
+2012-08-07 17:47:25,481 INFO NO TESTS FAILED 
+2012-08-07 17:47:33,032 INFO ********************* 
+2012-08-07 17:47:33,033 INFO Starting test case: TestAMSSuccessfulLogin 
+2012-08-07 17:47:33,033 INFO Initializing WebDriver - GOOGLECHROME 
+2012-08-07 17:47:35,626 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-08-07 17:47:35,627 INFO Retrying request 
+2012-08-07 17:47:40,918 INFO Woo Hoo! The following test passed: testAMSSuccessfulLogin 
+2012-08-07 17:47:40,919 INFO Closing WebDriver 
+2012-08-07 17:47:41,843 INFO WebDriver closed 
+2012-08-07 17:47:41,849 INFO Closing WebDriver 
+2012-08-07 17:47:41,963 INFO ********************* 
+2012-08-07 17:47:41,963 INFO  
+2012-08-07 17:47:41,963 INFO PASSED TESTS 
+2012-08-07 17:47:41,964 INFO testAMSSuccessfulLogin 
+2012-08-07 17:47:41,964 INFO =============================================== 
+2012-08-07 17:47:41,964 INFO FAILED TESTS 
+2012-08-07 17:47:41,964 INFO NO TESTS FAILED 
+2012-08-07 17:49:19,609 INFO ********************* 
+2012-08-07 17:49:19,609 INFO Starting test case: TestAMSSuccessfulLogin 
+2012-08-07 17:49:19,609 INFO Initializing WebDriver - GOOGLECHROME 
+2012-08-07 17:49:22,561 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-08-07 17:49:22,561 INFO Retrying request 
+2012-08-07 17:49:27,284 INFO Woo Hoo! The following test passed: testAMSSuccessfulLogin 
+2012-08-07 17:49:27,285 INFO Closing WebDriver 
+2012-08-07 17:49:28,205 INFO WebDriver closed 
+2012-08-07 17:49:28,209 INFO Closing WebDriver 
+2012-08-07 17:49:28,296 INFO ********************* 
+2012-08-07 17:49:28,297 INFO  
+2012-08-07 17:49:28,297 INFO PASSED TESTS 
+2012-08-07 17:49:28,297 INFO testAMSSuccessfulLogin 
+2012-08-07 17:49:28,297 INFO =============================================== 
+2012-08-07 17:49:28,297 INFO FAILED TESTS 
+2012-08-07 17:49:28,297 INFO NO TESTS FAILED 

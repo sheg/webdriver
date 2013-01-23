@@ -1,0 +1,9 @@
+{
+	"testConfig": {
+		"attributes": {
+			"username" : "danielforkosh@blogtalkradio.com",
+			"password" : "rice8080",
+			"contentTitle" : "autoTestTitle"
+		}
+	}
+}

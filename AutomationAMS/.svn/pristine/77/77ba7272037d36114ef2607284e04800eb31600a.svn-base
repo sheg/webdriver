@@ -1,0 +1,43 @@
+package com.webdriver.qa.automation.ams.testcases.player.urls;
+
+import junit.framework.Assert;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.webdriver.qa.automation.ams.pages.LoginPage;
+import com.webdriver.qa.automation.ams.pages.NavBarPageObject;
+import com.webdriver.qa.automation.ams.pages.SingleArchivePage;
+import com.webdriver.qa.automation.framework.testcase.TestCase;
+
+public class TestPlayerTypeManageSingle extends TestCase {
+
+	/**
+	 * Precondition - The account needs to have archived content available.
+	 * 
+	 * Asserts that on the single manage page:
+	 * 1) The embed player is a eesp
+	 * 2) Permalink player is ses
+	 * 3) Preview player is eesp
+	 * 
+	 * @throws Exception
+	 */
+	
+	@Test
+	public void testPlayerTypeSingleManage() throws Exception {
+		LoginPage login = PageFactory.initElements(driver, LoginPage.class);
+		login.inputLoginCredentials(m_config.getValue("username"), m_config.getValue("password"));
+		login.clickSignIn();
+		
+		NavBarPageObject navBar = PageFactory.initElements(driver, NavBarPageObject.class);
+		SingleArchivePage archivePage = navBar.goToArchivedContentPage();
+				
+		archivePage.clickOnNthItem(0);
+
+		Assert.assertEquals(m_config.getValue("previewUrlType"), archivePage.getPreviewPlayerUrlType());
+		Assert.assertEquals(m_config.getValue("permalinkUrlType"), archivePage.getPermalinkUrlType());
+		Assert.assertEquals(m_config.getValue("embedUrlType"), archivePage.getEmbedUrlType());
+		
+		navBar.signOut();
+	}
+}

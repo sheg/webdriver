@@ -1,0 +1,74 @@
+package com.webdriver.qa.automation.framework.testcase;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+
+import com.webdriver.qa.automation.framework.Framework;
+import com.webdriver.qa.automation.framework.enums.BrowserType;
+
+public abstract class TestCase {
+
+	protected static Framework m_framework = null;
+
+	protected WebDriver driver = null; 
+	protected TestConfig m_config = null;
+
+	private void setTestConfig() throws Exception {
+		String testCase = null;
+		testCase = this.getClass().getSimpleName();
+		m_config = m_framework.getTestConfig(testCase);
+	}
+
+	@BeforeClass
+	public void setup() throws Exception {
+		try {
+			if(m_framework == null)
+				m_framework = Framework.loadFramework(System.getProperty("configFile"));
+
+			BrowserType browserType = m_framework.getBrowserType();
+			switch(browserType) {
+			case FIREFOX :
+				driver = new FirefoxDriver();
+				break;
+			case GOOGLECHROME :		
+				driver = new ChromeDriver();
+				break;
+			case INTERNETEXPLORER :
+				driver = new InternetExplorerDriver();
+				break;
+			case SAFARI :
+				driver = new SafariDriver();
+			default :
+				throw new Exception("Could not properly create a webdriver instance - browserType: " + browserType);
+			}
+
+			driver.manage().timeouts().implicitlyWait(m_framework.getImplicitWaitTimout(), TimeUnit.SECONDS);
+			driver.get(m_framework.getEnvironment().getLocation());
+			setTestConfig();			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			teardown();
+		}
+	}
+
+	@AfterClass
+	public void teardown() throws IOException {
+		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshotFile, new File("/opt/screenshots/" + new Date() + ".png"));
+		driver.quit();
+	}
+}

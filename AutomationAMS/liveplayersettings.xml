@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="false">
+  <test name="Test" preserve-order="true">
+    <classes>
+      <class name="com.webdriver.qa.automation.ams.testcases.player.live.settings.TestAMSLivePlayerSaveSettingsTwice"/>
+      <class name="com.webdriver.qa.automation.ams.testcases.player.live.settings.TestAMSLivePlayerSetSettingsAudioAutoOff"/>
+      <class name="com.webdriver.qa.automation.ams.testcases.player.live.settings.TestAMSLivePlayerSetSettingsAudioAutoOn"/>
+      <class name="com.webdriver.qa.automation.ams.testcases.player.live.settings.TestAMSLivePlayerSetSettingsVideoSize240x205AutoOff"/>
+      <class name="com.webdriver.qa.automation.ams.testcases.player.live.settings.TestAMSLivePlayerSetSettingsVideoSize240x205AutoOn"/>
+      <class name="com.webdriver.qa.automation.ams.testcases.player.live.settings.TestAMSLivePlayerSetSettingsVideoSize320x265AutoOff"/>
+      <class name="com.webdriver.qa.automation.ams.testcases.player.live.settings.TestAMSLivePlayerSetSettingsVideoSize320x265AutoOn"/>
+      <class name="com.webdriver.qa.automation.ams.testcases.player.live.settings.TestAMSLivePlayerSetSettingsVideoSize400x325AutoOff"/>
+      <class name="com.webdriver.qa.automation.ams.testcases.player.live.settings.TestAMSLivePlayerSetSettingsVideoSize400x325AutoOn"/>
+      <class name="com.webdriver.qa.automation.ams.testcases.player.live.settings.TestAMSLivePlayerSetSettingsVideoSizeCustomAutoOff"/>
+      <class name="com.webdriver.qa.automation.ams.testcases.player.live.settings.TestAMSLivePlayerSetSettingsVideoSizeCustomAutoOn"/>
+    </classes>
+  </test>
+</suite>

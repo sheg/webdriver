@@ -1,0 +1,141 @@
+2013-01-20 20:33:33,337 INFO ********************* 
+2013-01-20 20:33:33,338 INFO  
+2013-01-20 20:33:33,338 INFO PASSED TESTS 
+2013-01-20 20:33:33,338 INFO NO TESTS PASSED 
+2013-01-20 20:33:33,338 INFO =============================================== 
+2013-01-20 20:33:33,338 INFO FAILED TESTS 
+2013-01-20 20:33:33,339 INFO NO TESTS FAILED 
+2013-01-20 20:33:46,912 INFO ********************* 
+2013-01-20 20:33:46,912 INFO  
+2013-01-20 20:33:46,912 INFO PASSED TESTS 
+2013-01-20 20:33:46,912 INFO NO TESTS PASSED 
+2013-01-20 20:33:46,912 INFO =============================================== 
+2013-01-20 20:33:46,912 INFO FAILED TESTS 
+2013-01-20 20:33:46,912 INFO NO TESTS FAILED 
+2013-01-20 20:35:11,086 INFO Closing WebDriver 
+2013-01-20 20:35:11,147 INFO ********************* 
+2013-01-20 20:35:11,147 INFO  
+2013-01-20 20:35:11,147 INFO PASSED TESTS 
+2013-01-20 20:35:11,148 INFO NO TESTS PASSED 
+2013-01-20 20:35:11,148 INFO =============================================== 
+2013-01-20 20:35:11,148 INFO FAILED TESTS 
+2013-01-20 20:35:11,148 INFO NO TESTS FAILED 
+2013-01-20 20:35:53,786 INFO ********************* 
+2013-01-20 20:35:53,787 INFO Starting test case: TestAMSSuccessfulLogin 
+2013-01-20 20:35:53,787 INFO Initializing WebDriver - GOOGLECHROME 
+2013-01-20 20:35:56,613 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2013-01-20 20:35:56,613 INFO Retrying request 
+2013-01-20 20:36:00,526 ERROR Test failed - testAMSSuccessfulLogin 
+2013-01-20 20:36:00,527 INFO Saving Screenshot 
+2013-01-20 20:36:00,853 INFO Screnshot saved - /opt/work/screenshots/2013.01.20/20.36.00.png 
+2013-01-20 20:36:00,856 INFO Closing WebDriver 
+2013-01-20 20:36:01,710 INFO WebDriver closed 
+2013-01-20 20:36:01,769 INFO ********************* 
+2013-01-20 20:36:01,769 INFO  
+2013-01-20 20:36:01,769 INFO PASSED TESTS 
+2013-01-20 20:36:01,769 INFO NO TESTS PASSED 
+2013-01-20 20:36:01,769 INFO =============================================== 
+2013-01-20 20:36:01,769 INFO FAILED TESTS 
+2013-01-20 20:36:01,770 INFO testAMSSuccessfulLogin 
+2013-01-20 20:37:09,578 INFO ********************* 
+2013-01-20 20:37:09,578 INFO Starting test case: TestAMSSuccessfulLogin 
+2013-01-20 20:37:09,578 INFO Initializing WebDriver - GOOGLECHROME 
+2013-01-20 20:37:11,654 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2013-01-20 20:37:11,654 INFO Retrying request 
+2013-01-20 20:39:02,205 INFO ********************* 
+2013-01-20 20:39:02,205 INFO Starting test case: TestAMSSuccessfulLogin 
+2013-01-20 20:39:02,205 INFO Initializing WebDriver - GOOGLECHROME 
+2013-01-20 20:39:04,292 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2013-01-20 20:39:04,292 INFO Retrying request 
+2013-01-20 20:40:28,347 INFO Woo Hoo! The following test passed: testAMSSuccessfulLogin 
+2013-01-20 20:40:28,348 INFO Closing WebDriver 
+2013-01-20 20:40:29,238 INFO WebDriver closed 
+2013-01-20 20:40:29,292 INFO ********************* 
+2013-01-20 20:40:29,292 INFO  
+2013-01-20 20:40:29,292 INFO PASSED TESTS 
+2013-01-20 20:40:29,292 INFO testAMSSuccessfulLogin 
+2013-01-20 20:40:29,292 INFO =============================================== 
+2013-01-20 20:40:29,292 INFO FAILED TESTS 
+2013-01-20 20:40:29,293 INFO NO TESTS FAILED 
+2013-01-20 20:41:32,602 INFO ********************* 
+2013-01-20 20:41:32,603 INFO Starting test case: TestAMSSuccessfulLogin 
+2013-01-20 20:41:32,603 INFO Initializing WebDriver - GOOGLECHROME 
+2013-01-20 20:42:54,827 INFO Woo Hoo! The following test passed: testAMSSuccessfulLogin 
+2013-01-20 20:42:54,828 INFO Closing WebDriver 
+2013-01-20 20:42:55,284 INFO WebDriver closed 
+2013-01-20 20:42:55,338 INFO ********************* 
+2013-01-20 20:42:55,338 INFO  
+2013-01-20 20:42:55,338 INFO PASSED TESTS 
+2013-01-20 20:42:55,339 INFO testAMSSuccessfulLogin 
+2013-01-20 20:42:55,339 INFO =============================================== 
+2013-01-20 20:42:55,339 INFO FAILED TESTS 
+2013-01-20 20:42:55,339 INFO NO TESTS FAILED 
+2013-01-20 20:52:22,668 INFO ********************* 
+2013-01-20 20:52:22,668 INFO Starting test case: TestAMSSuccessfulLogin 
+2013-01-20 20:52:22,668 INFO Initializing WebDriver - GOOGLECHROME 
+2013-01-20 20:54:33,846 INFO Woo Hoo! The following test passed: testAMSSuccessfulLogin 
+2013-01-20 20:54:33,847 INFO Closing WebDriver 
+2013-01-20 20:54:36,994 INFO WebDriver closed 
+2013-01-20 20:54:37,056 INFO ********************* 
+2013-01-20 20:54:37,056 INFO  
+2013-01-20 20:54:37,056 INFO PASSED TESTS 
+2013-01-20 20:54:37,056 INFO testAMSSuccessfulLogin 
+2013-01-20 20:54:37,056 INFO =============================================== 
+2013-01-20 20:54:37,056 INFO FAILED TESTS 
+2013-01-20 20:54:37,056 INFO NO TESTS FAILED 
+2013-01-20 21:07:04,260 INFO ********************* 
+2013-01-20 21:07:04,260 INFO Starting test case: TestAMSSuccessfulLogin 
+2013-01-20 21:07:04,260 INFO Initializing WebDriver - GOOGLECHROME 
+2013-01-20 21:09:09,903 INFO Woo Hoo! The following test passed: testAMSSuccessfulLogin 
+2013-01-20 21:09:09,903 INFO Closing WebDriver 
+2013-01-20 21:09:12,769 INFO WebDriver closed 
+2013-01-20 21:09:12,820 INFO ********************* 
+2013-01-20 21:09:12,821 INFO  
+2013-01-20 21:09:12,821 INFO PASSED TESTS 
+2013-01-20 21:09:12,821 INFO testAMSSuccessfulLogin 
+2013-01-20 21:09:12,821 INFO =============================================== 
+2013-01-20 21:09:12,821 INFO FAILED TESTS 
+2013-01-20 21:09:12,821 INFO NO TESTS FAILED 
+2013-01-20 21:26:01,149 INFO ********************* 
+2013-01-20 21:26:01,150 INFO Starting test case: TestAMSSuccessfulLogin 
+2013-01-20 21:26:01,150 INFO Initializing WebDriver - GOOGLECHROME 
+2013-01-20 21:28:07,042 INFO Woo Hoo! The following test passed: testAMSSuccessfulLogin 
+2013-01-20 21:28:07,043 INFO Closing WebDriver 
+2013-01-20 21:28:09,947 INFO WebDriver closed 
+2013-01-20 21:28:09,995 INFO ********************* 
+2013-01-20 21:28:09,995 INFO  
+2013-01-20 21:28:09,995 INFO PASSED TESTS 
+2013-01-20 21:28:09,995 INFO testAMSSuccessfulLogin 
+2013-01-20 21:28:09,996 INFO =============================================== 
+2013-01-20 21:28:09,996 INFO FAILED TESTS 
+2013-01-20 21:28:09,996 INFO NO TESTS FAILED 
+2013-01-20 21:34:37,353 INFO ********************* 
+2013-01-20 21:34:37,353 INFO Starting test case: TestAMSSuccessfulLogin 
+2013-01-20 21:34:37,353 INFO Initializing WebDriver - GOOGLECHROME 
+2013-01-20 21:34:39,506 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2013-01-20 21:34:39,506 INFO Retrying request 
+2013-01-20 21:35:58,634 INFO Woo Hoo! The following test passed: testAMSSuccessfulLogin 
+2013-01-20 21:35:58,635 INFO Closing WebDriver 
+2013-01-20 21:35:59,490 INFO WebDriver closed 
+2013-01-20 21:35:59,541 INFO ********************* 
+2013-01-20 21:35:59,541 INFO  
+2013-01-20 21:35:59,541 INFO PASSED TESTS 
+2013-01-20 21:35:59,541 INFO testAMSSuccessfulLogin 
+2013-01-20 21:35:59,541 INFO =============================================== 
+2013-01-20 21:35:59,541 INFO FAILED TESTS 
+2013-01-20 21:35:59,541 INFO NO TESTS FAILED 
+2013-01-20 21:44:41,279 INFO ********************* 
+2013-01-20 21:44:41,280 INFO Starting test case: TestAMSSuccessfulLogin 
+2013-01-20 21:44:41,280 INFO Initializing WebDriver - GOOGLECHROME 
+2013-01-20 21:44:43,549 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2013-01-20 21:44:43,550 INFO Retrying request 
+2013-01-20 21:46:02,901 INFO Woo Hoo! The following test passed: testAMSSuccessfulLogin 
+2013-01-20 21:46:02,902 INFO Closing WebDriver 
+2013-01-20 21:46:03,859 INFO WebDriver closed 
+2013-01-20 21:46:03,947 INFO ********************* 
+2013-01-20 21:46:03,947 INFO  
+2013-01-20 21:46:03,947 INFO PASSED TESTS 
+2013-01-20 21:46:03,948 INFO testAMSSuccessfulLogin 
+2013-01-20 21:46:03,948 INFO =============================================== 
+2013-01-20 21:46:03,948 INFO FAILED TESTS 
+2013-01-20 21:46:03,948 INFO NO TESTS FAILED 

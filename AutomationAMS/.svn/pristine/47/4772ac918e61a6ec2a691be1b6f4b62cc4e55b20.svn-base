@@ -1,0 +1,515 @@
+/**
+ * TODO
+ * Select individual content
+ * Check added content
+ * Upload preview image
+ */
+package com.webdriver.qa.automation.ams.pages;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import com.webdriver.qa.automation.ams.enums.ContentCategory;
+import com.webdriver.qa.automation.ams.enums.SearchConfig;
+import com.webdriver.qa.automation.framework.page.BasePage;
+
+/**
+ * @author bhutton(brianhutton@cinchcast.com)
+ * Created on: 03/06/2012
+ *
+ * Java Page Object for the Create Playlist Page.
+ * This Java class contains all identifiers available to the user in the Create
+ * Playlist page along with methods to mimic user interaction.
+ * Behaving as a DSL, methods return themselves, save for the actions that
+ * would place the user in a different page, returning said page's object
+ * instead.
+ */
+public class CreatePlaylistPage extends BasePage
+{
+  /**
+   * Title #WebElement.
+   */
+  @FindBy(css = ".box-header")
+  private WebElement playlist_header;
+
+  /**
+   * Create Dynamic Playlist #RadioButton
+   */
+  @FindBy(xpath = "//label[2]")
+  private WebElement create_dynamic_playlist;
+
+  /**
+   * Create Manual Playlist #RadioButton
+   */
+  @FindBy(id = "//label")
+  private WebElement create_manual_playlist;
+
+  /**
+   * Playlist Title #TextField
+   */
+  @FindBy(id = "Playlist_Name")
+  private WebElement title_textField;
+
+  /**
+   * Save Playlist #SubmitButton
+   */
+  @FindBy(id = "aSavePlaylist")
+  private WebElement save_playlist;
+
+  /**
+   * Search Config #Button
+   */
+  @FindBy(css = "button-search-config")
+  private WebElement search_config_button;
+
+  /**
+   * Search Config #Option: Everything
+   */
+  @FindBy(id = "cb-search-everything")
+  private WebElement search_option_everything;
+
+  /**
+   * Search Config #Option: Title
+   */
+  @FindBy(id = "cb-search-title")
+  private WebElement search_option_title;
+
+  /**
+   * Search Config #Option: Description
+   */
+  @FindBy(id = "cb-search-description")
+  private WebElement search_option_description;
+
+  /**
+   * Search Config #Option: Tags
+   */
+  @FindBy(id = "cb-search-tags")
+  private WebElement search_option_tags;
+
+  /**
+   * Search Config #Option: Category
+   */
+  @FindBy(id = "cb-search-category")
+  private WebElement search_option_category;
+
+  /**
+   * Search Playlist Content #TextField
+   */
+  @FindBy(id = "search-term-textbox")
+  private WebElement search_textField;
+
+  /**
+   * Search Submit #Button
+   */
+  @FindBy(css = "btn submit")
+  private WebElement search_submit;
+
+  /**
+   * Done Adding Content To Manual Playlist #Button
+   */
+  @FindBy(id = "close-content")
+  private WebElement done;
+
+  /**
+   * Add All Content to Dynamic Playlist #CheckBox
+   */
+  @FindBy(id = "chkAllItems")
+  private WebElement dynamic_all_items;
+
+  /**
+   * Include Hidden Content In Dynamic Playlist #RadioButton
+   */
+  @FindBy(id = "Playlist_includePrivate_true")
+  private WebElement include_hidden;
+
+  /**
+   * Exclude Hidden Content InDynamic Playlist #RadioButton
+   */
+  @FindBy(id = "Playlist_includePrivate_false")
+  private WebElement exclude_hidden;
+
+  /**
+   * Increase Dynamic Playlist Size by 1 #Button
+   */
+  @FindBy(id = "Increase")
+  private WebElement dynamic_increase_size;
+
+  /**
+   * Decrease Dynamic Playlist Size by 1 #Button
+   */
+  @FindBy(id = "Decrease")
+  private WebElement dynamic_decrease_size;
+
+  /**
+   * Long Description Rich Text Area #iFrame
+   */
+  @FindBy(id = "Playlist_LongDescription_ifr")
+  private WebElement longDescription_frame;
+
+  /**
+   * Playlist Category DropDown #Selector
+   */
+  @FindBy(id = "Playlist_Category_CategoryID")
+  private WebElement category_selector;
+
+  /**
+   * Playlist Tags #TextField
+   */
+  @FindBy(id = "text-tags")
+  private WebElement tags_textField;
+
+  /**
+   * Custom Short Description #RadioButton
+   */
+  @FindBy(xpath = "//form[@id='PlaylistForm']/div[5]/fieldset[3]/div/label[2]")
+  private WebElement shortDescription_custom;
+
+  /**
+   * Copy Short Description From Long Description #RadioButton
+   */
+  @FindBy(xpath = "//fieldset[3]/div/label")
+  private WebElement shortDescription_copyFromLongDesc;
+
+  /**
+   * Playlist Short Description #TextArea
+   */
+  @FindBy(id = "Playlist_ShortDescription")
+  private WebElement shortDescription_textField;
+
+  /**
+   * Cancel Creation Of Playlist #Button
+   */
+  @FindBy(linkText = "cancel")
+  private WebElement cancel;
+
+  /**
+   * Parent's constructor
+   * 
+   * @param driver WebDriver's driver to use as browser
+   */
+  public CreatePlaylistPage(WebDriver driver)
+  {
+    super(driver);
+  }
+
+  /**
+   * Set the playlist as Dynamic.<br>
+   * #DefaultValue is Manual<br>
+   * See {@link #setAsManual()}
+   *
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage setAsDynamic()
+  {
+    create_dynamic_playlist.click();
+    return this;
+  }
+
+  /**
+   * Set the playlist as Manual (#DefaultValue)
+   *
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage setAsManual()
+  {
+    create_manual_playlist.click();
+    return this;
+  }
+
+  /**
+   * Restrict the search to certain field represented by enum {@link SearchConfig}.<br>
+   * #DefaultValue is Everything<br>
+   * Only for Manual Playlists. See {@link #setAsManual()}
+   * @param option An enum in {@link SearchConfig}
+   *
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage configSearch(SearchConfig option)
+  {
+    // Open search-config drop down
+    search_config_button.click();
+    switch(option)
+    {
+    case EVERYTHING:
+      search_option_everything.click();
+      break;
+    case TITLE:
+      search_option_title.click();
+      break;
+    case DESCRIPTION:
+      search_option_description.click();
+      break;
+    case TAGS:
+      search_option_tags.click();
+      break;
+    case CATEGORY:
+      search_option_category.click();
+      break;
+    }
+    // Close search-config drop down
+    search_config_button.click();
+    return this;
+  }
+
+  /**
+   * Searches the content displayed for the given text.<br>
+   * Only for Manual Playlists. See {@link #setAsManual()}
+   *
+   * @param text The text to search for
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage searchPlaylistContent(String text)
+  {
+    search_textField.sendKeys(text);
+    search_submit.click();
+    return this;
+  }
+
+  /**
+   * Adds content to Playlist.<br>
+   * Only for Manual Playlists. See {@link #setAsManual()}<br>
+   * <b> Missing implementation.</b>
+   *
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage addContentManually()
+  {
+    //TODO(bhutton): Add implementation
+    done.click();
+    return this;
+  }
+
+  /**
+   * Increases the size of dynamic Playlists by 1.<br>
+   * #DefaultValue is 3.<br>
+   * Only for Dynamic Playlists. See {@link #setAsDynamic()}
+   *
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage increaseDynamicPlaylistLength()
+  {
+    dynamic_increase_size.click();
+    return this;
+  }
+
+  /**
+   * Decreases the size of dynamic Playlists by 1.<br>
+   * #DefaultValue is 3.<br>
+   * Only for Dynamic Playlists. See {@link #setAsDynamic()}
+   *
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage decreaseDynamicPlaylistLength()
+  {
+    dynamic_decrease_size.click();
+    return this;
+  }
+
+  /**
+   * Increases the Dynamic Playlist size to include all available content.<br>
+   * #DefauktValue is off<br>
+   * Only for Dynamic Playlists. See {@link #setAsDynamic()}
+   *
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage includeAllItemsInDynamicPlaylist()
+  {
+    dynamic_all_items.click();
+    return this;
+  }
+
+  /**
+   * Determines if the Dynamic Playlist can include hidden content or not.<br>
+   * #DefaultValue is <b><code>false</code></b><br>
+   * Only for Dynamic Playlists. See {@link #setAsDynamic()}
+   *
+   * @param showHiddenContent Boolean:
+   *    <ul> 
+   *      <li><code>true</code> to include hidden content.
+   *      <li><code>false</code> to exclude hidden content.
+   *    </ul>
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage includeHiddenInDynamicPlaylist(boolean showHiddenContent)
+  {
+    if (showHiddenContent)
+    {
+      include_hidden.click();
+    } else 
+    {
+      exclude_hidden.click();
+    }
+    return this;
+  }
+
+  /**
+   * Sets a Title to the Playlist.<br>
+   * <b>#mandatoryField</b>.
+   *
+   * @param title The text to input as title
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage inputTitle(String title)
+  {
+    title_textField.sendKeys(title);
+    return this;
+  }
+
+  /**
+   * Sets a description to the Playlist.<br>
+   * <b>#mandatoryField</b>.
+   *
+   * @param text Text to input as description
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage inputLongDescription(String text)
+  {
+    // LongDescription text area is a rich text area created from tinyMCE.
+    // Only way for WebDriver to be able to write in field is to access
+    // the iFrame of tinyMCE and writing directly to the innerHTML
+    // of the body
+    try
+    {
+      // Use the browser's driver to access the iFrame of tinyMCE
+      getDriver().switchTo().frame(longDescription_frame);
+      // Use JSExecuter to write to the innerHTML of the body.
+      // TODO(bhutton): Need to test with other Drivers. Works for FF.
+      ((JavascriptExecutor) getDriver()).executeScript("document.body.innerHTML = '" + text + "'");
+    } finally
+    {
+      // Switch focus back to main frame to continue with test.
+      getDriver().switchTo().defaultContent();
+    }
+    return this;
+  }
+
+  /**
+   * Sets a preview image to the Playlist.<br>
+   * <b> Missing implementation.</b>
+   *
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage setPreviewImage()
+  {
+    //TODO(bhutton): Add implementation
+    return this;
+  }
+
+  /**
+   * A list of comma-separated-tags to set to the playlist.<br>
+   * #DefaultValue is <b>empty</b>.
+   *
+   * @param tags A string of tags to set to the Playlist. Comma separated.
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage withTags(String tags)
+  {
+    tags_textField.sendKeys(tags);
+    return this;
+  }
+
+  /**
+   * Sets the category which the Playlist will be created under with an enum
+   * from {@link ContentCategory}.<br>
+   * #DefaultValue is <b>No Category</b>.<br>
+   *
+   * @param category The category to create the playlist with. See {@link ContentCategory}
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage selectCategory(ContentCategory category)
+  {
+    final Select select = new Select(category_selector);
+    select.selectByValue(category.getValue());
+    return this;
+  }
+
+  /**
+   * Sets the Playlist to a Custom Short Description.<br>
+   * User must enter the Short Description.<br>
+   * #DefaultValue is <b>Copy from Description</b>
+   *
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage setShortDescriptionCustom()
+  {
+    shortDescription_custom.click();
+    return this;
+  }
+
+  /**
+   * Sets the Playlist to Copy Short Description from Long Description.<br>
+   * User can't enter the Short Description.<br>
+   * (#DefaultValue)
+   *
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage setShortDescriptionFromLongDescription()
+  {
+    shortDescription_copyFromLongDesc.click();
+    return this;
+  }
+
+  /**
+   * Sets the short description to the provided text.<br>
+   * Only for Custom Short Descriptions. See {@link #setShortDescriptionCustom()}<br>
+   * <b>Mandatory field</b>
+   *
+   * @param text The text to input as short description.
+   * @return {@link CreatePlaylistPage}
+   */
+  public CreatePlaylistPage inputShortDescription(String text)
+  {
+    shortDescription_textField.sendKeys(text);
+    return this;
+  }
+
+  /**
+   * Saves the playlist with current parameters.<br>
+   * Returns the user to the {@link CreatePlaylistPage} in <b>Edit</b> Mode
+   * if successful
+   *
+   * @return {@link CreatePlaylistPage}
+   */
+  public EditPlaylistPage savePlaylist()
+  {
+    save_playlist.click();
+    return PageFactory.initElements(getDriver(), EditPlaylistPage.class);
+  }
+
+  /**
+   * Cancels the creation of the playlist.<br>
+   * A message pops up for confirmation.<br>
+   * <b>Missing Implementation</b>: Missing pop up handler.
+   *
+   * @return redirects to ArchiveContentPage
+   */
+  public /*ArchiveContentPage*/void cancelPlaylist()
+  {
+    cancel.click();
+    // TODO(bhutton): Add "accept" or "cancel" to pop-up message after clicking cancel button.
+    //return PageFactory.initElement(getDriver(), ArchiveContentPage.class);
+  }
+
+  /**
+   * Validates if user is on Create Playlist Page
+   *
+   * @return Boolean:
+   * <ul>
+   *  <li><code>true</code> if Page header is "New Playlist"
+   *  <li><code>false</code> otherwise
+   * </ul>
+   * @throws Exception When not in Create Playlist Page
+   */
+  public boolean validateOnCreatePlaylistPage() throws Exception
+  {
+    if (!playlist_header.getText().trim().equals("New Playlist"))
+    {
+      throw new Exception("Could not validate being on the new playlist page");
+    }
+    return true;
+  }
+}

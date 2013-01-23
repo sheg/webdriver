@@ -1,0 +1,15 @@
+{
+	"testConfig": {
+		"attributes": {
+			"username": "brianhutton2@cinchcast.com",
+			"password": "asdqwe",
+			"type" : "dynamic",
+			"size" : "2",
+			"includeHidden" : "true",
+			"title" : "ShouldBeDeleted",
+			"description" : "This playlist will be deleted after creation. If you see it outside a test environment. Delete it, that means the test has failed.",
+			"category" : "Arts",
+			"shortDescription" : "test for deletion"
+		}
+	}
+}

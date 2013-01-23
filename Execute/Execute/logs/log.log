@@ -1,0 +1,16 @@
+2012-08-08 16:06:53,796 INFO ********************* 
+2012-08-08 16:06:53,822 INFO Starting test case: TestAMSSuccessfulLogin 
+2012-08-08 16:06:53,822 INFO Initializing WebDriver - GOOGLECHROME 
+2012-08-08 16:06:56,227 INFO I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond 
+2012-08-08 16:06:56,228 INFO Retrying request 
+2012-08-08 16:07:00,566 INFO Woo Hoo! The following test passed: testAMSSuccessfulLogin 
+2012-08-08 16:07:00,567 INFO Closing WebDriver 
+2012-08-08 16:07:01,521 INFO WebDriver closed 
+2012-08-08 16:07:01,524 INFO Closing WebDriver 
+2012-08-08 16:07:01,630 INFO ********************* 
+2012-08-08 16:07:01,630 INFO  
+2012-08-08 16:07:01,630 INFO PASSED TESTS 
+2012-08-08 16:07:01,631 INFO testAMSSuccessfulLogin 
+2012-08-08 16:07:01,631 INFO =============================================== 
+2012-08-08 16:07:01,631 INFO FAILED TESTS 
+2012-08-08 16:07:01,631 INFO NO TESTS FAILED 

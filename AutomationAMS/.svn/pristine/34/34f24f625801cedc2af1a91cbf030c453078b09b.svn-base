@@ -1,0 +1,163 @@
+/**
+ * TODO
+ *
+ */
+package com.webdriver.qa.automation.ams.pages;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.webdriver.qa.automation.framework.page.BasePage;
+
+/**
+ * @author bhutton(brianhutton@cinchcast.com)
+ * Created on: 04/06/2012
+ *
+ */
+public class EditPlaylistPage extends BasePage
+{
+
+  /**
+   * Title #WebElement
+   */
+  @FindBy(css = ".box-header")
+  private WebElement playlist_header;
+
+  /**
+   * Delete Playlist #Button
+   */
+  @FindBy(linkText = "delete")
+  private WebElement delete;
+
+  /**
+   * Publish Playlist #Button
+   */
+  @FindBy(linkText = "publish")
+  private WebElement publish;
+
+  /**
+   * RSS Feed #Button
+   */
+  @FindBy(linkText = "rss")
+  private WebElement feed_rss;
+
+  /**
+   * iTunes Feed #Button
+   */
+  @FindBy(linkText = "itunes")
+  private WebElement feed_iTunes;
+
+  /**
+   * Embedded Code #TextField
+   */
+  @FindBy(id = "EmbededCode")
+  private WebElement player_embeddedCode_TextField;
+
+  /**
+   * Permalink URL #Link
+   */
+  @FindBy(css = "a.permalink")
+  private WebElement permalink_url;
+
+  /**
+   * Copy Embedded Code #Button
+   */
+  @FindBy(id = "aEmbedCopy")
+  private WebElement player_embededCode_copy;
+
+  /**
+   * Media Player #FlashObject
+   */
+  @FindBy(id = "mediaplayer")
+  private WebElement player;
+
+  /**
+   * Playlist Title #TextField
+   */
+  @FindBy(id = "Playlist_Name")
+  private WebElement title_textField;
+
+  /**
+   * Close Confirmation Message After Create #Button
+   */
+  @FindBy(xpath = "//div[5]/a")
+  private WebElement confirmation_message_close;
+
+  /**
+   * Confirmation Message After Create #TextArea
+   */
+  @FindBy(xpath = "//div[5]/p")
+  private WebElement confirmation_meesage_textField;
+
+  /**
+   * Parent's constructor
+   * 
+   * @param driver WebDriver's driver to use as browser
+   */
+  public EditPlaylistPage(WebDriver driver)
+  {
+    super(driver);
+  }
+
+  /**
+   * Deletes Playlist Currently In Edit Page<br>
+   *
+   * @param title Playlist's title user want to delete
+   * @throws Exception when current playlist being edited does not match
+   * the title of playlist the user wants to delete
+   *
+   * @return redirects to ArchiveContentPage
+   */
+  public /*ArchiveContentPage*/void deletePlaylist(String title) throws Exception 
+  {
+    if (!title_textField.getAttribute("value").equals(title)) {
+      throw new Exception ("Trying to delete [" + title +"], but currently editing [" + title_textField + "]");
+    }
+    delete.click();
+
+    Alert alert = getDriver().switchTo().alert();
+    alert.accept();
+    //return PageFactory.initElement(getDriver(), ArchiveContentPage.class);
+  }
+
+  /**
+   * Validates if user is on Edit Playlist Page
+   *
+   * @return Boolean:
+   * <ul>
+   *  <li><code>true</code> if Page header is "Edit Playlist"
+   *  <li><code>false</code> otherwise
+   * </ul>
+   * @throws Exception When not in Edit Playlist Page
+   */
+  public boolean validateOnEditPlaylistPage() throws Exception
+  {
+    if (!playlist_header.getText().contains("Edit Playlist"))
+    {
+      throw new Exception("Could not validate being on the edit playlist page." +
+          " Header reads [" + playlist_header.getText() + "]");
+    }
+    return true;
+  }
+
+  /**
+   * Confirms creation of playlist.<br>
+   * Checks confirmation text and closes confirmation message. 
+   *
+   * @return {@link EditPlaylistPage}
+   */
+  public EditPlaylistPage confirmCreationOfPlaylist() throws Exception
+  {
+    if (!confirmation_meesage_textField.getText().equals("Your playlist has been created.")) {
+      throw new Exception("Couldn't confirm playlist creation message." +
+          " Expected [Your playlist has been created.]" +
+          ", but got [" + confirmation_meesage_textField.getText() + "].");
+    }
+
+    confirmation_message_close.click();
+    return this;
+  }
+
+}

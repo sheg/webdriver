@@ -1,0 +1,125 @@
+//package frameworktests;
+//
+//import java.io.File;
+//import java.io.FileNotFoundException;
+//import java.sql.ResultSet;
+//import java.sql.SQLException;
+//import java.util.Set;
+//
+//import org.testng.Assert;
+//import org.testng.annotations.BeforeClass;
+//import org.testng.annotations.Test;
+//
+//import com.webdriver.qa.automation.framework.Framework;
+//import com.webdriver.qa.automation.framework.JsonFileCollector;
+//import com.webdriver.qa.automation.framework.database.DatabaseConnection;
+//import com.webdriver.qa.automation.framework.enums.BrowserType;
+//import com.webdriver.qa.automation.framework.enums.Project;
+//import com.webdriver.qa.automation.framework.exceptions.InvalidAttributeException;
+//import com.webdriver.qa.automation.framework.exceptions.InvalidBrowserTypeException;
+//import com.webdriver.qa.automation.framework.exceptions.InvalidEnvironmentException;
+//import com.webdriver.qa.automation.framework.exceptions.TestProjectNotFoundException;
+//import com.webdriver.qa.automation.framework.testcase.TestConfig;
+//
+//public class TestFramework {
+//	
+//	Framework framework = null;
+//	
+//	@BeforeClass
+//	public void setup() throws Exception {
+//		String configFile = "/Users/danielforkosh/Documents/workspace/Automationframework/src/test/java/frameworktests/testConfig.json";
+//		framework = Framework.loadFramework(configFile);
+//	}
+//	
+//	@Test
+//	public void testProperJsonBrowserType() throws FileNotFoundException {
+//		BrowserType browserType = framework.getBrowserType();
+//		Assert.assertEquals(BrowserType.FIREFOX, browserType); 
+//	}
+//
+//	@Test(expectedExceptions = InvalidBrowserTypeException.class)
+//	public void testInvalidBrowserType() throws Exception {
+//		framework = Framework.loadFramework("/Users/danielforkosh/Documents/workspace/Automationframework/src/test/java/frameworktests/testConfigBadBrowserType.json");
+//	}
+//	
+//	@Test
+//	public void testProperJsonEnvironment() throws FileNotFoundException {
+//		Assert.assertEquals(framework.getEnvironment().getLocation(), "http://platform.cinchcast.com");
+//	}
+//	
+//	@Test(expectedExceptions = InvalidEnvironmentException.class)
+//	public void testInvalidJsonEnvironment() throws Exception {
+//		framework = Framework.loadFramework("/Users/danielforkosh/Documents/workspace/Automationframework/src/test/java/frameworktests/testConfigBadEnvironment.json");
+//	}
+//	
+//	@Test
+//	public void testProperJsonImplicitWaitTime() throws FileNotFoundException {
+//		Assert.assertEquals(30, framework.getImplicitWaitTimout());
+//	}
+//	
+//	@Test
+//	public void testProperJsonProjectType() throws FileNotFoundException {
+//		Assert.assertEquals(Project.FRAMEWORK, framework.getProject());
+//	}
+//	
+//	@Test(expectedExceptions = TestProjectNotFoundException.class)
+//	public void testNonExistingProject() throws Exception {		
+//		framework = Framework.loadFramework("/Users/danielforkosh/Documents/workspace/Automationframework/src/test/java/frameworktests/testConfigBadProject.json");
+//	}
+//			
+//	
+//	@Test
+//	public void testGetBTRJsonFiles() throws Exception {
+//		boolean allFilesInBounds = true;
+//		JsonFileCollector jsonFileCollector = new JsonFileCollector();
+//		framework.setProject(Project.BTR);
+//		jsonFileCollector.populateAutomationJsonFiles(framework.getProjectResources().get(framework.getProject().toString()));
+//		Set<File> jsonFiles = jsonFileCollector.getSystemJsonFiles();
+//		for(File configFile : jsonFiles) {
+//			if(configFile.getAbsolutePath().toLowerCase().contains("ams")) {
+//				allFilesInBounds = false;
+//			}
+//		}
+//		Assert.assertTrue(allFilesInBounds);
+//		framework.setProject(Project.FRAMEWORK); //Set it back for other tests.
+//	}
+//	
+//	@Test
+//	public void testGetAMSJsonFiles() throws Exception {
+//		boolean allFilesInBounds = true;
+//		JsonFileCollector jsonFileCollector = new JsonFileCollector();
+//		framework.setProject(Project.AMS);
+//		jsonFileCollector.populateAutomationJsonFiles(framework.getProjectResources().get(framework.getProject().toString()));
+//		Set<File> jsonFiles = jsonFileCollector.getSystemJsonFiles();
+//		for(File configFile : jsonFiles) {
+//			if(configFile.getAbsolutePath().toLowerCase().contains("btr")) {
+//				allFilesInBounds = false;
+//			}
+//		}
+//		Assert.assertTrue(allFilesInBounds);
+//		framework.setProject(Project.FRAMEWORK); //Set it back for other tests.
+//	}
+//	
+//	@Test
+//	public void testGetSuccessfulAttributeValue() throws Exception {
+//		TestConfig testConfig = framework.getTestConfig("test");
+//		Assert.assertEquals(testConfig.getValue("testAttribute1"), "test1");
+//	}
+//	
+//	@Test(expectedExceptions = InvalidAttributeException.class)
+//	public void testGetInvalidAttributeValue() throws Exception {
+//		TestConfig testConfig = framework.getTestConfig("test");
+//		testConfig.getValue("I_AM_NOT_HERE");
+//	}
+//	
+//	@Test
+//	public void testDBConnection() throws SQLException, ClassNotFoundException {
+//		DatabaseConnection db = new DatabaseConnection();
+//		ResultSet resultSet = db.executeQuery("SELECT * FROM btr2qa.dbo.aspnet_Membership (NOLOCK) WHERE email = 'danforkosh@yahoo.com';");
+//		resultSet.next();
+//		Assert.assertTrue(resultSet.getString("UserId").equals("4034AD76-B518-47E8-A940-E470C535DDA8"));		
+//		
+//		resultSet.close();
+//		db.getDatabaseConnection().close();
+//	}
+//}

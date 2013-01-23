@@ -1,0 +1,19 @@
+{
+	"project": "AMS",
+	"environment": "AMS_QA",
+	"browserType": "firefox",
+	"implicitWaitTimout": 30,
+	"projectResources": {
+		"BTR":"C:\\__dev__\\QA_Checkouts\\AutomationBTR\\src\\main\\java\\com\\webdriver\\qa\\automation\\btr\\testcases",
+		"AMS":"C:\\__dev__\\QA_Checkouts\\AutomationAMS\\src\\main\\java\\com\\webdriver\\qa\\automation\\ams\\testcases",
+		"FRAMEWORK":"C:\\__dev__\\QA_Checkouts\\Automationframework\\src\\test\\java\\frameworktests\\"
+	},
+	"database": {
+		"dataBaseAttributes": {
+			"serverUrl": "192.168.6.219",
+			"databaseName": "BTR2QA",
+			"username": "sa",
+			"password": "8uh23ed"
+		}
+	}
+}

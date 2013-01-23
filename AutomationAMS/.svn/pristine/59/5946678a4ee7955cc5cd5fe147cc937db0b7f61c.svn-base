@@ -1,0 +1,60 @@
+package com.webdriver.qa.automation.ams.testcases.playlist;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.webdriver.qa.automation.ams.enums.ContentCategory;
+import com.webdriver.qa.automation.ams.pages.DashboardPage;
+import com.webdriver.qa.automation.ams.pages.EditPlaylistPage;
+import com.webdriver.qa.automation.ams.pages.LoginPage;
+import com.webdriver.qa.automation.ams.pages.CreatePlaylistPage;
+import com.webdriver.qa.automation.framework.testcase.TestCase;
+
+/**
+ * @author bhutton(brianhutton@cinchcast.com)
+ * Created on: 03/06/2012
+ *
+ * Test to successfully create a Dynamic Playlist
+ */
+public class TestAMSSuccessfullDynamicPlaylist extends TestCase
+{
+  /**
+   * Current Playlist's Title. Used to delete created playlists.
+   */
+  private String currentPlaylistTitle;
+
+  @Test
+  public void testSuccessfullPlaylist() throws Exception
+  {
+    currentPlaylistTitle = "Title" + System.currentTimeMillis();
+
+    String username = m_config.getValue("username");
+    String password = m_config.getValue("password");
+
+    LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+    loginPage.inputLoginCredentials(username, password);
+    DashboardPage dashboardPage = loginPage.clickSignIn();
+    dashboardPage.validateLoggedIn(username);
+    CreatePlaylistPage playlistPage = dashboardPage.clickNewPlaylistButton();
+    EditPlaylistPage editPlaylistPage = 
+        playlistPage.setAsDynamic()
+                    .inputTitle(currentPlaylistTitle)
+                    .inputLongDescription("Description")
+                    .selectCategory(ContentCategory.TECHNOLOGY)
+                    .setShortDescriptionCustom()
+                    .inputShortDescription("short Description")
+                    .savePlaylist()
+                    .confirmCreationOfPlaylist();
+    editPlaylistPage.validateOnEditPlaylistPage();
+  }
+
+  @Test
+  public /*ArchiveContentPage*/void testSuccessfullyDeletePlaylist() throws Exception 
+  {
+    EditPlaylistPage editPlaylistPage = PageFactory.initElements(driver, EditPlaylistPage.class);
+    editPlaylistPage.validateOnEditPlaylistPage();
+    // TODO(bhutton): Return ArchiveContentPage.
+    // TODO(bhutton): Verify playlist was deleted.
+    editPlaylistPage.deletePlaylist(currentPlaylistTitle);
+  }
+}
